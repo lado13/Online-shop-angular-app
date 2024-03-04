@@ -1,0 +1,76 @@
+.container{
+
+    .back-btn {
+        font-size: 19px;
+        color: white;
+        font-weight: bold;
+        border: 1px solid white;
+        width: 150px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 20px;
+    }
+
+    .back-btn:hover {
+        background-color: rgb(250, 145, 127);
+        color: black;
+    }
+
+    .category-upload-container{
+
+        width: 350px;
+        margin: auto;
+        padding: 40px;
+
+        .title{
+            color: white;
+            margin-bottom: 80px;
+            width: 400px;
+        }
+    
+        height: 80vh;
+    
+        .back{
+            width: 100%;
+            border: 1px solid #ffffff;
+        }
+    
+        .category-form{
+
+            .form-control {
+                border: none;
+                border-bottom: 1px solid #ffffff;
+                background-color: transparent !important;
+                border-radius: 0;
+                box-shadow: none;
+                color: #ffffff;
+            }
+
+            margin-bottom: 30px;
+    
+            .form-label{
+                font-size: 20px;
+                color: #ffffff;
+            }
+    
+            .inp{
+                margin-bottom: 20px;
+            }
+        }
+    }
+}
+
+
+
+@media (max-width: 1000px) {
+    .container {
+    
+        .category-upload-container{
+
+            .title{
+                width: 0px;
+            }
+        }
+    }
+}

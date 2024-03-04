@@ -1,0 +1,74 @@
+.order-container {
+  min-height: 90vh;
+}
+.order-container .title {
+  text-align: center;
+  margin-top: 15px;
+  color: white;
+  font-weight: bold;
+}
+.order-container .back-btn {
+  font-size: 19px;
+  color: white;
+  font-weight: bold;
+  border: 1px solid white;
+  width: 150px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+.order-container .back-btn:hover {
+  background-color: rgb(250, 145, 127);
+  color: black;
+}
+.order-container .ul {
+  border: 1px solid white;
+  padding: 20px;
+  margin-top: 10px;
+}
+.order-container .ul .value-container .nav-item {
+  display: flex;
+  color: white;
+}
+.order-container .ul .value-container .nav-item .model-title {
+  width: 300px;
+}
+.order-container .ul .value-container .nav-item .model-title .item-model {
+  color: rgb(255, 183, 39);
+  border: 1px solid white;
+  margin-bottom: 5px;
+}
+.order-container .ul .value-container .nav-item .model-title .model-value {
+  font-size: 13px;
+  width: 100px;
+}
+.order-container .ul .value-container .nav-item .model-title .model-value .order-remove-btn {
+  background-color: transparent;
+  color: white;
+  transition: all 0.3s ease-in-out;
+}
+.order-container .ul .value-container .nav-item .model-title .model-value .order-remove-btn:hover {
+  color: red;
+  scale: 1.1;
+}
+.order-container .ul .value-container .nav-item .model-title .model-value .user-order-img {
+  width: 70px;
+  height: 70px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.admin-loading {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  background-color: transparent !important;
+  transform: translate(-50%, -50%);
+}
+
+@media (max-width: 1000px) {
+  .nav-item {
+    display: block !important;
+  }
+}/*# sourceMappingURL=user-order.component.css.map */

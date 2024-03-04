@@ -1,1 +1,314 @@
-/* You can add global styles to this file, and also import other style files */
+body {
+    background-color: #000000;
+    transition: all .1s ease-in-out;
+}
+
+
+body.dark-mode {
+
+    background-color: #ffffff;
+    color: #000000 !important;
+
+
+    .navbar-container {
+        background: linear-gradient(180deg, #00ff92, #00ffaf, #ffffff);
+
+        .logo {
+            color: #000000 !important;
+        }
+
+        .nav-link {
+            color: #000000 !important;
+        }
+
+
+        .nav-link::before{
+            background-color: #4e00b4 !important;
+        }
+
+        .user-welcome {
+            background: black;
+            border-radius: 53 !important;
+            color: #e8ff00 !important;
+            text-shadow: 4px 9px 3px rgb(0 0 0 / 50%) !important;
+        }
+
+
+
+    }
+
+
+    .search-container {
+        background: linear-gradient(180deg, #00ff92, #00ffaf, #ffffff);
+
+        .nav-item {
+            color: #000000 !important;
+        }
+    }
+
+    .user-info-Container {
+        background-color: #6d50b7 !important;
+        color: #000000 !important;
+    }
+
+
+    .carusel-container {
+        background: linear-gradient(180deg, #00ff92, #00ffaf, #00b8ff);
+        border: 1px solid #000000 !important;
+        .carusel-text {
+            color: #000000 !important;
+        }
+
+
+    }
+
+    .catgory-container {
+        background: linear-gradient(180deg, #00ff92, #00ffaf, #00b8ff);
+        color: #000000;
+        border: 1px solid black;
+
+        .category-ul{
+            border: 1px solid black !important;
+        }
+        .nav-link:hover {
+            background-color: #320083 !important; 
+            color: #000000 !important;
+        }
+        .category-model-value:hover{
+            background-color: transparent !important;   
+        }
+    
+        .edit-btn {
+            color: #000000 !important;
+            border: 2px solid #31006c;
+        }
+
+        .remove-btn {
+            color: #000000 !important;
+            border: 2px solid #ff0000;
+        }
+
+    }
+
+
+    .product-container {
+        .products {
+            color: #000000 !important;
+            opacity: 1 !important;
+            border: 1px solid black !important;
+        }
+
+        .edit-btn {
+            color: #000000 !important;
+            border: 2px solid #3d0088;
+        }
+
+        .remove-btn {
+            color: #000000 !important;
+            border: 2px solid #ff0000;
+        }
+    }
+
+    .pagination {
+
+        .nation-btn {
+            color: #000000 !important;
+            background: linear-gradient(180deg, #00ffb8, #00faff) !important;
+            border: none !important;
+            opacity: 1 !important;
+        }
+
+    }
+
+
+    .footer {
+        background: linear-gradient(180deg, #ffffff, #00ffaf, #00ff92);
+        color: #000000 !important;
+    }
+
+    .detail-container {
+        .item {
+            color: #000000 !important;
+        }
+    }
+
+
+
+    .container {
+
+        .back-btn {
+            border: 1px solid rgb(0, 0, 0) !important;
+            color: #000000 !important;
+        }
+
+        .text-center {
+            color: #000000 !important;
+        }
+    }
+
+    .login-container {
+
+        border: 1px solid #000000 !important;
+
+        .field-container {
+            color: #000000 !important;
+
+            .form-control {
+                border-bottom: 1px solid #000000 !important;
+                color: #000000 !important;
+            }
+
+            .recovery {
+                color: #00a6ff !important;
+                transition: all .3s ease-in-out;
+            }
+
+            .recovery:hover {
+                scale: 1.1;
+                color: #5900ab !important;
+            }
+        }
+    }
+
+
+    .car-upload-container {
+        border: 1px solid #000000;
+
+        .form-control {
+            border-bottom: 1px solid #000000 !important;
+            color: #000000 !important;
+        }
+    }
+
+    .order-container {
+        .nav-item {
+            .order-model-title {
+
+                .model-title-impo {
+                    color: #000000 !important;
+                }
+
+                .model-title {
+                    color: #000000 !important;
+                }
+            }
+        }
+
+        .pluse-minuse {
+            color: #000000 !important;
+        }
+    }
+
+    .admin-container {
+        background: none !important;
+    }
+
+    .category-upload-container {
+
+        .title {
+            color: #000000 !important;
+        }
+
+        .form-label {
+            color: #000000 !important;
+        }
+
+        .form-control {
+            border-bottom: 1px solid #000000 !important;
+            color: #000000 !important;
+        }
+    }
+
+    .product-form {
+
+        .title {
+            color: #000000 !important;
+        }
+
+        .form-label {
+            color: #000000 !important;
+        }
+
+        .form-control {
+            border-bottom: 1px solid #000000 !important;
+            color: #000000 !important;
+        }
+    }
+
+    .order-container {
+
+        .title {
+            color: #000000 !important;
+        }
+
+        .ul {
+            border: 1px solid #000000 !important;
+
+            .value-container {
+                color: #000000 !important;
+
+                .nav-item {
+                    color: #000000 !important;
+                }
+
+            }
+
+        }
+
+        .order-remove-btn {
+
+            color: #000000 !important;
+        }
+
+        .order-remove-btn:hover {
+            color: #ff0000 !important;
+        }
+
+    }
+
+
+    .user-container {
+
+        .users-title {
+            color: #000000 !important;
+        }
+
+        .li {
+            border: 1px solid #000000 !important;
+
+            .item-value {
+                color: #000000 !important;
+            }
+
+            .user-remove-btn {
+                color: #000000 !important;
+            }
+        }
+    }
+
+
+    .admin-title-container {
+        color: #000000 !important;
+    }
+
+    .modal-content {
+        background: linear-gradient(180deg, #00ff92, #00ffaf, #00b8ff) !important;
+        color: #000000 !important;
+    }
+    .modal-title{
+        color: #000000 !important;
+    }
+
+    .text-danger{
+        color: #ff0000;
+        font-weight: bold;
+        font-size: 15px;
+    }
+
+
+  
+
+
+
+
+}

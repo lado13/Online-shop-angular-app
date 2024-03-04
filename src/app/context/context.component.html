@@ -1,0 +1,99 @@
+<svg class="loading" *ngIf="!productsLoaded" xmlns="http://www.w3.org/2000/svg"
+    xmlns:xlink="http://www.w3.org/1999/xlink" style="margin: auto; background: rgb(241, 242, 243); display: block;"
+    width="200px" height="200px" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid">
+    <circle cx="50" cy="50" r="30" stroke="#000000" stroke-width="10" fill="none"></circle>
+    <circle cx="50" cy="50" r="30" stroke="#00ff8e" stroke-width="8" stroke-linecap="round" fill="none">
+        <animateTransform attributeName="transform" type="rotate" repeatCount="indefinite" dur="1s"
+            values="0 50 50;180 50 50;720 50 50" keyTimes="0;0.5;1"></animateTransform>
+        <animate attributeName="stroke-dasharray" repeatCount="indefinite" dur="1s"
+            values="18.84955592153876 169.64600329384882;94.2477796076938 94.24777960769377;18.84955592153876 169.64600329384882"
+            keyTimes="0;0.5;1"></animate>
+    </circle>
+</svg>
+
+
+
+<div class="container carusel-container">
+    <div id="carouselExampleAutoplaying" class="carousel slide carusel-slide" data-bs-ride="carousel">
+        <div class="carousel-inner  inner-container">
+            <div class="carousel-item active carusel-item" *ngFor="let product of caruselProduct; let i = index"
+                [class.active]="i === 0">
+                <img [routerLink]="['/products',product.id]" [src]="product.image" class="d-block  carusel-img"
+                    alt="{{ product.title }}">
+                <div class="carousel-caption d-none d-md-block carusel-text">
+                    <p class="title">Title: {{product.title}}</p>
+                    <p>Model: {{product.model}}</p>
+                    <p>Price: {{product.price}} $</p>
+                </div>
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying"
+            data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying"
+            data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+</div>
+
+
+
+<div class="container fluid-container">
+    <div class="row">
+        <div class="categories col-md-2" *ngIf="categories !== null && categories.length > 0">
+            <div class="catgory-container">
+                <div class="inner-container">
+                    @for (item of categories; track $index) {
+                    <ul (click)="loadProductsByCategory(item.id)" class="category-ul">
+                        <li class="nav-link">
+                            <h4>
+                                {{item.name}}
+                            </h4>
+                        </li>
+                    </ul>
+                    }
+                </div>
+            </div>
+        </div>
+        <div class="col product-container">
+            <div class="row m-auto">
+                @for (item of products; track $index) {
+                <div class="products container col-4">
+
+                    <ul [routerLink]="['/products',item.id]" class="ul">
+                        <li class="nav-link">
+                            <h5>
+                                {{item.title}}
+                            </h5>
+                        </li>
+                        <li class="nav-link">
+                            <img class="img" loading="lazy" src="{{item.image}}">
+                        </li>
+                        <li class="nav-link">
+                            <p>
+                                {{item.price}} $
+                            </p>
+                        </li>
+                    </ul>
+                </div>
+                }
+            </div>
+
+            <div *ngIf="totalCount > 1" class="pagination center d-flex justify-content-center page-nation-container">
+                <div class="page-nation-btn" *ngFor="let item of pageSizeArray">
+                    <button class="nation-btn" (click)="onPageChange(item)">{{ item }}</button>
+                </div>
+            </div>
+
+            <!-- 
+            <button [disabled]="currentPage === 1" (click)="onPageChange(currentPage - 1)">Previous</button>
+            <span>{{ currentPage }}</span>
+            <button (click)="onPageChange(currentPage + 1)">Next</button> -->
+
+        </div>
+    </div>
+</div>

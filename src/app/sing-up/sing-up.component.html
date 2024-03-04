@@ -1,0 +1,83 @@
+<div class="car-upload-container w-25 m-auto container">
+    <h2 class="text-center">Registration</h2>
+    <form class="login-form" #registrationForm="ngForm" (ngSubmit)="onSubmit()">
+        <div class="form-item text-center field-container">
+            <label class="form-label" for="name">First Name</label>
+            <input class="form-control" type="text" id="name" name="name" [(ngModel)]="userRegister.firstName" required
+                #name="ngModel">
+            <div *ngIf="name.invalid && (name.dirty || name.touched)">
+                <span class="error-message" *ngIf="name.errors">
+                    First Name is required
+                </span>
+            </div>
+        </div>
+        <div class="form-item text-center field-container">
+            <label class="form-label" for="lastName">Last Name</label>
+            <input class="form-control" type="text" id="lastName" name="lastName" [(ngModel)]="userRegister.lastName"
+                required #lastName="ngModel">
+            <div *ngIf="lastName.invalid && (lastName.dirty || lastName.touched)">
+                <span class="error-message" *ngIf="lastName.errors">
+                    Last Name is required
+                </span>
+            </div>
+        </div>
+        <div class="form-item  text-center field-container">
+            <label class="form-label" for="image">Image</label>
+            <input class="form-control" type="file" id="image" name="image" (change)="onFileSelected($event)" required>
+        </div>
+        <div class="form-item text-center field-container">
+            <label class="form-label" for="age">Age</label>
+            <input class="form-control" type="number" id="age" name="age" [(ngModel)]="userRegister.age" required
+                #age="ngModel">
+            <div *ngIf="age.invalid && (age.dirty || age.touched)">
+                <span class="error-message" *ngIf="age.errors">
+                    Age is required
+                </span>
+            </div>
+        </div>
+        <div class="form-item text-center field-container">
+            <label class="form-label" for="email">Email</label>
+            <input class="form-control" type="email" id="email" name="email" (ngModelChange)="checkValidEmail($event)"
+                [(ngModel)]="userRegister.email" required #email="ngModel">
+            <small class="error-message" *ngIf="!isValidEmail && userRegister.email">Email is invalid</small>
+            <div *ngIf="email.invalid && (email.dirty || email.touched)">
+                <span class="error-message" *ngIf="email.errors">
+                    Email is required
+                </span>
+            </div>
+        </div>
+        <div class="form-item text-center field-container">
+            <label class="form-label" for="password">Password</label>
+            <div class="pass-input">
+                <input class="form-control" [type]="showPassword ? 'text' : 'password'" id="password" name="password"
+                    [(ngModel)]="userRegister.password" required #password="ngModel" minlength="8">
+                <i (click)="togglePasswordVisibility()" class=" eye fa-regular fa-eye"></i>
+            </div>
+            <div *ngIf="password.invalid && (password.dirty || password.touched)">
+                <span *ngIf="userRegister.password.length < 8" class="error-message">
+                    Password must be at least 8 characters long
+                </span>
+
+            </div>
+        </div>
+        <div class="form-item text-center field-container">
+            <label class="form-label" for="repeatPassword">Repeat Password</label>
+            <div class="pass-input">
+                <input class="form-control" [type]="showRepeatPassword ? 'text' : 'password'" id="repeatPassword"
+                    name="repeatPassword" [(ngModel)]="repeatPassword" required #repeatPasswordInput="ngModel">
+                <i (click)="togglePasswordRepeateVisibility()" class=" eye fa-regular fa-eye"></i>
+            </div>
+
+            <div *ngIf="registrationForm.submitted && userRegister.password !== repeatPasswordInput.value">
+                <span class="error-message">
+                    Passwords do not match
+                </span>
+            </div>
+        </div>
+        <p class="text-danger mt-5">{{message}}</p>
+        <div class="text-center field-container">
+            <button class="btn  sing-btn w-100" type="submit"
+                [disabled]="registrationForm.invalid">Registration</button>
+        </div>
+    </form>
+</div>

@@ -1,0 +1,97 @@
+.user-container {
+    min-height: 100vh;
+
+    .users-title{
+        text-align: center;
+        color: #ffffff;
+    }
+
+    .link-container {
+
+        width: 150px;
+
+        .back-btn {
+            font-size: 19px;
+            color: white;
+            font-weight: bold;
+            border: 1px solid white;
+            width: 150px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            cursor: pointer;
+        }
+
+        .back-btn:hover {
+            background-color: rgb(250, 145, 127);
+            color: black;
+            width: 150px;
+        }
+    }
+
+    .link-container:hover {
+        background-color: rgb(96, 0, 164);
+    }
+
+    .ul {
+
+        .li {
+            display: flex;
+            border: 1px solid white;
+            margin-top: 15px;
+            padding: 10px;
+
+            .item-container {
+
+                .user-img {
+                    width: 100px;
+                    height: 100px;
+                    object-fit: cover;
+                }
+
+                margin-right: 15px;
+                width: 200px;
+
+                .item-model {
+                    color: rgb(255, 174, 0);
+                    border: 1px solid white;
+                }
+
+                .item-value {
+                    color: white;
+                    font-size: 16px;
+                    margin-top: 5px;
+                }
+
+                .user-remove-btn {
+                    background-color: transparent;
+                    color: white;
+                    transition: all .3s ease-in-out;
+                }
+
+                .user-remove-btn:hover {
+                    background-color: red;
+                    scale: 1.1;
+                }
+            }
+        }
+    }
+}
+
+.admin-loading {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    background-color: transparent !important;
+    transform: translate(-50%, -50%);
+}
+
+
+
+@media (max-width: 1000px) {
+
+    .nav-item {
+        display: block !important;
+    }
+}

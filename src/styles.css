@@ -1,0 +1,8 @@
+body {
+  background-color: #000000;
+}
+
+body.dark-mode {
+  background: linear-gradient(180deg, #310854, #080b29, #071627);
+  color: #fff;
+}/*# sourceMappingURL=styles.css.map */

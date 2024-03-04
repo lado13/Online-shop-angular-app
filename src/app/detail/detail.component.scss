@@ -1,0 +1,115 @@
+.detail-container{
+    display: flex;
+    min-height: 90vh;
+
+    .detail-ul{
+
+        display: flex;
+        padding: 40px;
+
+        .detail-li{
+
+            list-style-type: none;
+
+            .detail-img{
+
+                max-width: 600px;
+                height: 500px;
+
+            }
+        }
+    }
+
+
+
+    .detail-text{
+
+        list-style-type: none;
+        color: white;
+        font-weight: bold;
+        padding: 20px;
+        
+        .item{
+
+            display: flex;
+            margin-top: 15px;
+
+            .modelTitle{
+
+                margin-right: 20px;
+
+            }
+        }
+
+        .detail-inner-container{
+
+            padding: 10px;
+            display: block;
+            margin-top: 170px;
+          
+            .detail-btn{
+                max-width: 200px;
+                padding: 20px;
+                color: rgb(0, 0, 0);
+                background-color: #00ff2f;
+                margin-right: 10px;
+                border: 1px solid white;
+                font-size: 20px;
+                font-weight: bold;
+            }
+
+            .detail-btn:hover {
+                color: rgb(255, 170, 0);
+            }
+    
+            .detail-link{
+                text-decoration: none;
+                font-size: 19px;
+                color: rgb(220, 17, 119);
+                padding: 15px;
+            }
+
+            .detail-link:hover {
+
+                border: 1px solid white;
+                background-color: #ff9988;
+                color: white;
+              
+            }
+        }
+    }
+}
+
+
+
+
+@media (max-width: 768px) {
+
+    .detail-container{
+
+        .detail-ul{
+
+            display: block; 
+            padding: 0px !important;
+
+            .detail-li{
+
+                .detail-img{
+
+                    margin-top: 41px !important;
+                    width: 200px;
+                    height: 200px !important;
+
+                }
+            }
+        } 
+    }  
+}
+
+.loading {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: transparent !important;
+}

@@ -1,0 +1,58 @@
+.container {
+  padding: 40px;
+  min-height: 100vh;
+  border: 1px solid #ffffff;
+  margin-top: 50px !important;
+  margin-bottom: 50px !important;
+}
+.container .text-center {
+  font-size: 30px;
+  color: white;
+  font-weight: bold;
+}
+.container .login-form .field-container .form-control {
+  border: none;
+  border-bottom: 1px solid #ffffff;
+  background-color: transparent;
+  border-radius: 0;
+  box-shadow: none;
+  color: #ffffff;
+}
+.container .login-form .field-container .pass-input {
+  position: relative !important;
+}
+.container .login-form .field-container .eye {
+  position: absolute;
+  color: #767676;
+  right: 3px;
+  top: 10px;
+  font-size: 19px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+.container .login-form .field-container .eye:hover {
+  scale: 1.1;
+  color: #14bb91;
+}
+.container .login-form .field-container .sing-btn {
+  margin-top: 30px;
+  background-color: #ff9d47;
+  height: 50px;
+  font-size: 20px;
+  font-weight: bold;
+  cursor: pointer;
+}
+.container .login-form .field-container .error-message {
+  font-size: 13px;
+  color: rgb(255, 0, 0);
+  padding: 10px;
+}
+.container .login-form .field-container .form-label {
+  font-size: 17px;
+}
+
+@media (max-width: 1000px) {
+  .container {
+    width: 300px !important;
+  }
+}/*# sourceMappingURL=sing-up.component.css.map */

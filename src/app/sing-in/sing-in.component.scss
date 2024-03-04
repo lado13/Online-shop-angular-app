@@ -1,0 +1,109 @@
+.container {
+    padding: 30px;
+    min-height: 90vh;
+
+    .text-center {
+        font-size: 30px;
+        color: white;
+        font-weight: bold;
+    }
+
+    .login-container {
+
+        border: 1px solid #ffffff;
+        padding: 40px;
+
+        .login-form {
+
+            .field-container {
+
+                .form-control {
+                    border: none;
+                    border-bottom: 1px solid #ffffff;
+                    background-color: transparent !important;
+                    border-radius: 0;
+                    box-shadow: none;
+                    color: #ffffff;
+                }
+
+                .pass-input {
+                    position: relative !important;
+                }
+
+                .eye {
+                    position: absolute;
+                    color: #767676;
+                    right: 3px;
+                    top: 10px;
+                    font-size: 19px;
+                    cursor: pointer;
+                    transition: all .3s ease-in-out;
+                }
+
+                .eye:hover {
+                    scale: 1.1;
+                    color: #14bb91;
+                }
+
+                .sing-btn {
+
+                    margin-top: 30px;
+                    background-color: #ff9d47;
+                    height: 50px;
+                    font-size: 20px;
+                    font-weight: bold;
+                    cursor: pointer;
+                }
+
+                .error-message {
+                    font-size: 13px;
+                    color: #ff0909;
+                    text-decoration: none !important;
+                }
+
+                .form-label {
+                    font-size: 17px;
+                }
+            }
+
+            .recovery {
+                cursor: pointer;
+                color: #ffffff;
+            }
+
+            .recovery:hover {
+                color: #ff9d47;
+            }
+        }
+    }
+}
+
+.modal-content {
+
+    background: linear-gradient(180deg, #000000, #080b29, #8d0cff);
+
+    .modal-title {
+        color: #ffffff;
+    }
+
+    .modal-inp {
+        border-radius: 10px;
+        border: none;
+    }
+
+    .send {
+        background-color: #ffa200;
+    }
+
+    .close {
+        background-color: #ff0909;
+    }
+}
+
+
+
+@media (max-width: 1000px) {
+    .container {
+        width: 300px !important;
+    }
+}

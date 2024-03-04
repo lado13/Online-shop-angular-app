@@ -1,0 +1,17 @@
+<div class="container">
+    <button class="btn  back-btn" [routerLink]="['/adminPanel']">Go Back</button>
+    <div class="category-upload-container center">
+        <h2 class="title">Upload Category</h2>
+        <form class="category-form" #categoryForm="ngForm" (ngSubmit)="onSubmit()">
+            <div class="form-item">
+                <label class="form-label" for="Title">Title</label>
+                <input class="form-control inp" type="text" id="Name" name="Name" [(ngModel)]="categoryData.Name"
+                    required>
+            </div>
+            <div>
+                <button class="btn btn-primary w-100" type="submit" [disabled]="categoryForm.invalid">Upload
+                    Category</button>
+            </div>
+        </form>
+    </div>
+</div>

@@ -1,0 +1,378 @@
+<svg *ngIf="!productsLoaded" class="admin-loading" xmlns="http://www.w3.org/2000/svg"
+        xmlns:xlink="http://www.w3.org/1999/xlink" style="margin:auto;background:#fff;display:block;" width="200px"
+        height="200px" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid">
+        <g transform="translate(50 50)">
+                <g transform="translate(-19 -19) scale(0.6)">
+                        <g>
+                                <animateTransform attributeName="transform" type="rotate" values="0;45" keyTimes="0;1"
+                                        dur="0.2s" begin="0s" repeatCount="indefinite"></animateTransform>
+                                <path d="M31.35997276079435 21.46047782418268 L38.431040572659825 28.531545636048154 L28.531545636048154 38.431040572659825 L21.46047782418268 31.359972760794346 A38 38 0 0 1 7.0000000000000036 37.3496987939662 L7.0000000000000036 37.3496987939662 L7.000000000000004 47.3496987939662 L-6.999999999999999 47.3496987939662 L-7 37.3496987939662 A38 38 0 0 1 -21.46047782418268 31.35997276079435 L-21.46047782418268 31.35997276079435 L-28.531545636048154 38.431040572659825 L-38.43104057265982 28.531545636048158 L-31.359972760794346 21.460477824182682 A38 38 0 0 1 -37.3496987939662 7.000000000000007 L-37.3496987939662 7.000000000000007 L-47.3496987939662 7.000000000000008 L-47.3496987939662 -6.9999999999999964 L-37.3496987939662 -6.999999999999997 A38 38 0 0 1 -31.35997276079435 -21.460477824182675 L-31.35997276079435 -21.460477824182675 L-38.431040572659825 -28.531545636048147 L-28.53154563604818 -38.4310405726598 L-21.4604778241827 -31.35997276079433 A38 38 0 0 1 -6.999999999999992 -37.3496987939662 L-6.999999999999992 -37.3496987939662 L-6.999999999999994 -47.3496987939662 L6.999999999999977 -47.3496987939662 L6.999999999999979 -37.3496987939662 A38 38 0 0 1 21.460477824182686 -31.359972760794342 L21.460477824182686 -31.359972760794342 L28.531545636048158 -38.43104057265982 L38.4310405726598 -28.53154563604818 L31.35997276079433 -21.4604778241827 A38 38 0 0 1 37.3496987939662 -6.999999999999995 L37.3496987939662 -6.999999999999995 L47.3496987939662 -6.999999999999997 L47.349698793966205 6.999999999999973 L37.349698793966205 6.999999999999976 A38 38 0 0 1 31.359972760794346 21.460477824182682 M0 -23A23 23 0 1 0 0 23 A23 23 0 1 0 0 -23"
+                                        fill="#ffffff"></path>
+                        </g>
+                </g>
+                <g transform="translate(19 19) scale(0.6)">
+                        <g>
+                                <animateTransform attributeName="transform" type="rotate" values="45;0" keyTimes="0;1"
+                                        dur="0.2s" begin="-0.1s" repeatCount="indefinite"></animateTransform>
+                                <path d="M-31.35997276079435 -21.460477824182675 L-38.431040572659825 -28.531545636048147 L-28.53154563604818 -38.4310405726598 L-21.4604778241827 -31.35997276079433 A38 38 0 0 1 -6.999999999999992 -37.3496987939662 L-6.999999999999992 -37.3496987939662 L-6.999999999999994 -47.3496987939662 L6.999999999999977 -47.3496987939662 L6.999999999999979 -37.3496987939662 A38 38 0 0 1 21.460477824182686 -31.359972760794342 L21.460477824182686 -31.359972760794342 L28.531545636048158 -38.43104057265982 L38.4310405726598 -28.53154563604818 L31.35997276079433 -21.4604778241827 A38 38 0 0 1 37.3496987939662 -6.999999999999995 L37.3496987939662 -6.999999999999995 L47.3496987939662 -6.999999999999997 L47.349698793966205 6.999999999999973 L37.349698793966205 6.999999999999976 A38 38 0 0 1 31.359972760794346 21.460477824182682 L31.359972760794346 21.460477824182682 L38.431040572659825 28.531545636048154 L28.531545636048183 38.4310405726598 L21.460477824182703 31.35997276079433 A38 38 0 0 1 6.9999999999999964 37.3496987939662 L6.9999999999999964 37.3496987939662 L6.999999999999995 47.3496987939662 L-7.000000000000009 47.3496987939662 L-7.000000000000007 37.3496987939662 A38 38 0 0 1 -21.46047782418263 31.359972760794385 L-21.46047782418263 31.359972760794385 L-28.531545636048094 38.43104057265987 L-38.431040572659796 28.531545636048186 L-31.359972760794328 21.460477824182703 A38 38 0 0 1 -37.34969879396619 7.000000000000032 L-37.34969879396619 7.000000000000032 L-47.34969879396619 7.0000000000000355 L-47.3496987939662 -7.000000000000002 L-37.3496987939662 -7.000000000000005 A38 38 0 0 1 -31.359972760794346 -21.460477824182682 M0 -23A23 23 0 1 0 0 23 A23 23 0 1 0 0 -23"
+                                        fill="#09f100"></path>
+                        </g>
+                </g>
+        </g>
+</svg>
+
+
+<div class="container admin-nav-container">
+        <nav class="navbar navbar-expand-lg navbar-container admin-container">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0 ">
+                        <li class="nav-item">
+                                <a class="nav-link upload" [routerLink]="['/categoryUpload']">
+                                        <i class="fa-solid fa-file-import"></i> Upload Category
+                                </a>
+                        </li>
+                        <li class="nav-item">
+                                <a class="nav-link upload" [routerLink]="['/productUpload']">
+                                        <i class="fa-solid fa-file-import"></i> Upload Product
+                                </a>
+                        </li>
+                        <li class="nav-item">
+                                <a class="nav-link upload" [routerLink]="['/userOrders']">
+                                        <i class="fa-solid fa-dolly"></i> Users orders
+                                </a>
+                        </li>
+                        <li class="nav-item">
+                                <a class="nav-link upload" [routerLink]="['/user']">
+                                        <i class="fa-solid fa-users"></i> Users
+                                </a>
+                        </li>
+                </ul>
+        </nav>
+</div>
+
+
+<div class="admin-title-container">
+        <i class="logo fa-solid fa-user-secret"></i>
+        <h1>Admin Panel</h1>
+</div>
+
+<svg class="matrix" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+        style="margin:auto;background:#000000;display:block;z-index:1;position:relative" width="1084" height="322"
+        preserveAspectRatio="xMidYMid" viewBox="0 0 1084 322">
+        <defs>
+                <pattern id="pid-0.8830869282032572" x="0" y="0" width="128" height="128" patternUnits="userSpaceOnUse">
+                        <g transform="scale(0.5)">
+                                <g style="font-family:courier new;font-size:25.6">
+                                        <g transform="translate(0 25.6)"><text fill="#34ff00"
+                                                        style="animation-delay:-1.470926139346821s">ス</text></g>
+                                        <g transform="translate(0 51.2)"><text fill="#34ff00"
+                                                        style="animation-delay:-1.370926139346821s">ヌ</text></g>
+                                        <g transform="translate(0 76.80000000000001)"><text fill="#34ff00"
+                                                        style="animation-delay:-1.270926139346821s">Ｇ</text></g>
+                                        <g transform="translate(0 102.4)"><text fill="#34ff00"
+                                                        style="animation-delay:-1.1709261393468209s">テ</text></g>
+                                        <g transform="translate(0 128)"><text fill="#34ff00"
+                                                        style="animation-delay:-1.0709261393468208s">ヰ</text></g>
+                                        <g transform="translate(0 153.60000000000002)"><text fill="#34ff00"
+                                                        style="animation-delay:-0.9709261393468209s">ケ</text></g>
+                                        <g transform="translate(0 179.20000000000002)"><text fill="#34ff00"
+                                                        style="animation-delay:-0.870926139346821s">ヘ</text></g>
+                                        <g transform="translate(0 204.8)"><text fill="#34ff00"
+                                                        style="animation-delay:-0.770926139346821s">３</text></g>
+                                        <g transform="translate(0 230.4)"><text fill="#34ff00"
+                                                        style="animation-delay:-0.6709261393468209s">ワ</text></g>
+                                        <g transform="translate(0 256)"><text fill="#34ff00"
+                                                        style="animation-delay:-0.5709261393468209s">４</text></g>
+                                        <g transform="translate(25.6 25.6)"><text fill="#34ff00"
+                                                        style="animation-delay:-1.5158924981151034s">ノ</text></g>
+                                        <g transform="translate(25.6 51.2)"><text fill="#34ff00"
+                                                        style="animation-delay:-1.4158924981151033s">ル</text></g>
+                                        <g transform="translate(25.6 76.80000000000001)"><text fill="#34ff00"
+                                                        style="animation-delay:-1.3158924981151034s">ユ</text></g>
+                                        <g transform="translate(25.6 102.4)"><text fill="#34ff00"
+                                                        style="animation-delay:-1.2158924981151034s">Ｄ</text></g>
+                                        <g transform="translate(25.6 128)"><text fill="#34ff00"
+                                                        style="animation-delay:-1.1158924981151035s">ユ</text></g>
+                                        <g transform="translate(25.6 153.60000000000002)"><text fill="#34ff00"
+                                                        style="animation-delay:-1.0158924981151034s">Ｖ</text></g>
+                                        <g transform="translate(25.6 179.20000000000002)"><text fill="#34ff00"
+                                                        style="animation-delay:-0.9158924981151034s">ヱ</text></g>
+                                        <g transform="translate(25.6 204.8)"><text fill="#34ff00"
+                                                        style="animation-delay:-0.8158924981151034s">Ｎ</text></g>
+                                        <g transform="translate(25.6 230.4)"><text fill="#34ff00"
+                                                        style="animation-delay:-0.7158924981151034s">１</text></g>
+                                        <g transform="translate(25.6 256)"><text fill="#34ff00"
+                                                        style="animation-delay:-0.6158924981151034s">キ</text></g>
+                                        <g transform="translate(51.2 25.6)"><text fill="#34ff00"
+                                                        style="animation-delay:-1.0987043297860546s">Ｈ</text></g>
+                                        <g transform="translate(51.2 51.2)"><text fill="#34ff00"
+                                                        style="animation-delay:-0.9987043297860546s">Ｑ</text></g>
+                                        <g transform="translate(51.2 76.80000000000001)"><text fill="#34ff00"
+                                                        style="animation-delay:-0.8987043297860546s">ソ</text></g>
+                                        <g transform="translate(51.2 102.4)"><text fill="#34ff00"
+                                                        style="animation-delay:-0.7987043297860545s">セ</text></g>
+                                        <g transform="translate(51.2 128)"><text fill="#34ff00"
+                                                        style="animation-delay:-0.6987043297860546s">８</text></g>
+                                        <g transform="translate(51.2 153.60000000000002)"><text fill="#34ff00"
+                                                        style="animation-delay:-0.5987043297860546s">イ</text></g>
+                                        <g transform="translate(51.2 179.20000000000002)"><text fill="#34ff00"
+                                                        style="animation-delay:-0.4987043297860546s">ソ</text></g>
+                                        <g transform="translate(51.2 204.8)"><text fill="#34ff00"
+                                                        style="animation-delay:-0.3987043297860546s">ネ</text></g>
+                                        <g transform="translate(51.2 230.4)"><text fill="#34ff00"
+                                                        style="animation-delay:-0.2987043297860546s">ヒ</text></g>
+                                        <g transform="translate(51.2 256)"><text fill="#34ff00"
+                                                        style="animation-delay:-0.1987043297860546s">１</text></g>
+                                        <g transform="translate(76.80000000000001 25.6)"><text fill="#34ff00"
+                                                        style="animation-delay:-1.6523619954829396s">マ</text></g>
+                                        <g transform="translate(76.80000000000001 51.2)"><text fill="#34ff00"
+                                                        style="animation-delay:-1.5523619954829395s">ヒ</text></g>
+                                        <g transform="translate(76.80000000000001 76.80000000000001)"><text
+                                                        fill="#34ff00"
+                                                        style="animation-delay:-1.4523619954829396s">ユ</text></g>
+                                        <g transform="translate(76.80000000000001 102.4)"><text fill="#34ff00"
+                                                        style="animation-delay:-1.3523619954829396s">ン</text></g>
+                                        <g transform="translate(76.80000000000001 128)"><text fill="#34ff00"
+                                                        style="animation-delay:-1.2523619954829397s">エ</text></g>
+                                        <g transform="translate(76.80000000000001 153.60000000000002)"><text
+                                                        fill="#34ff00"
+                                                        style="animation-delay:-1.1523619954829396s">ユ</text></g>
+                                        <g transform="translate(76.80000000000001 179.20000000000002)"><text
+                                                        fill="#34ff00"
+                                                        style="animation-delay:-1.0523619954829395s">ワ</text></g>
+                                        <g transform="translate(76.80000000000001 204.8)"><text fill="#34ff00"
+                                                        style="animation-delay:-0.9523619954829396s">ヒ</text></g>
+                                        <g transform="translate(76.80000000000001 230.4)"><text fill="#34ff00"
+                                                        style="animation-delay:-0.8523619954829396s">Ｑ</text></g>
+                                        <g transform="translate(76.80000000000001 256)"><text fill="#34ff00"
+                                                        style="animation-delay:-0.7523619954829396s">マ</text></g>
+                                        <g transform="translate(102.4 25.6)"><text fill="#34ff00"
+                                                        style="animation-delay:-1.5853810374900215s">イ</text></g>
+                                        <g transform="translate(102.4 51.2)"><text fill="#34ff00"
+                                                        style="animation-delay:-1.4853810374900216s">リ</text></g>
+                                        <g transform="translate(102.4 76.80000000000001)"><text fill="#34ff00"
+                                                        style="animation-delay:-1.3853810374900215s">Ｑ</text></g>
+                                        <g transform="translate(102.4 102.4)"><text fill="#34ff00"
+                                                        style="animation-delay:-1.2853810374900214s">ヌ</text></g>
+                                        <g transform="translate(102.4 128)"><text fill="#34ff00"
+                                                        style="animation-delay:-1.1853810374900213s">ノ</text></g>
+                                        <g transform="translate(102.4 153.60000000000002)"><text fill="#34ff00"
+                                                        style="animation-delay:-1.0853810374900215s">Ｋ</text></g>
+                                        <g transform="translate(102.4 179.20000000000002)"><text fill="#34ff00"
+                                                        style="animation-delay:-0.9853810374900215s">８</text></g>
+                                        <g transform="translate(102.4 204.8)"><text fill="#34ff00"
+                                                        style="animation-delay:-0.8853810374900215s">リ</text></g>
+                                        <g transform="translate(102.4 230.4)"><text fill="#34ff00"
+                                                        style="animation-delay:-0.7853810374900214s">Ｗ</text></g>
+                                        <g transform="translate(102.4 256)"><text fill="#34ff00"
+                                                        style="animation-delay:-0.6853810374900214s">Ｄ</text></g>
+                                        <g transform="translate(128 25.6)"><text fill="#34ff00"
+                                                        style="animation-delay:-1.3461828312168516s">ハ</text></g>
+                                        <g transform="translate(128 51.2)"><text fill="#34ff00"
+                                                        style="animation-delay:-1.2461828312168515s">Ｃ</text></g>
+                                        <g transform="translate(128 76.80000000000001)"><text fill="#34ff00"
+                                                        style="animation-delay:-1.1461828312168516s">ホ</text></g>
+                                        <g transform="translate(128 102.4)"><text fill="#34ff00"
+                                                        style="animation-delay:-1.0461828312168515s">チ</text></g>
+                                        <g transform="translate(128 128)"><text fill="#34ff00"
+                                                        style="animation-delay:-0.9461828312168515s">ヱ</text></g>
+                                        <g transform="translate(128 153.60000000000002)"><text fill="#34ff00"
+                                                        style="animation-delay:-0.8461828312168516s">ロ</text></g>
+                                        <g transform="translate(128 179.20000000000002)"><text fill="#34ff00"
+                                                        style="animation-delay:-0.7461828312168516s">エ</text></g>
+                                        <g transform="translate(128 204.8)"><text fill="#34ff00"
+                                                        style="animation-delay:-0.6461828312168516s">ネ</text></g>
+                                        <g transform="translate(128 230.4)"><text fill="#34ff00"
+                                                        style="animation-delay:-0.5461828312168515s">ク</text></g>
+                                        <g transform="translate(128 256)"><text fill="#34ff00"
+                                                        style="animation-delay:-0.44618283121685154s">Ｘ</text></g>
+                                        <g transform="translate(153.60000000000002 25.6)"><text fill="#34ff00"
+                                                        style="animation-delay:-1.4683333302327606s">Ｈ</text></g>
+                                        <g transform="translate(153.60000000000002 51.2)"><text fill="#34ff00"
+                                                        style="animation-delay:-1.3683333302327605s">Ｙ</text></g>
+                                        <g transform="translate(153.60000000000002 76.80000000000001)"><text
+                                                        fill="#34ff00"
+                                                        style="animation-delay:-1.2683333302327606s">Ｈ</text></g>
+                                        <g transform="translate(153.60000000000002 102.4)"><text fill="#34ff00"
+                                                        style="animation-delay:-1.1683333302327605s">６</text></g>
+                                        <g transform="translate(153.60000000000002 128)"><text fill="#34ff00"
+                                                        style="animation-delay:-1.0683333302327607s">ヰ</text></g>
+                                        <g transform="translate(153.60000000000002 153.60000000000002)"><text
+                                                        fill="#34ff00"
+                                                        style="animation-delay:-0.9683333302327606s">Ｐ</text></g>
+                                        <g transform="translate(153.60000000000002 179.20000000000002)"><text
+                                                        fill="#34ff00"
+                                                        style="animation-delay:-0.8683333302327606s">９</text></g>
+                                        <g transform="translate(153.60000000000002 204.8)"><text fill="#34ff00"
+                                                        style="animation-delay:-0.7683333302327606s">タ</text></g>
+                                        <g transform="translate(153.60000000000002 230.4)"><text fill="#34ff00"
+                                                        style="animation-delay:-0.6683333302327605s">ヰ</text></g>
+                                        <g transform="translate(153.60000000000002 256)"><text fill="#34ff00"
+                                                        style="animation-delay:-0.5683333302327606s">ソ</text></g>
+                                        <g transform="translate(179.20000000000002 25.6)"><text fill="#34ff00"
+                                                        style="animation-delay:-1.49272917058587s">ワ</text></g>
+                                        <g transform="translate(179.20000000000002 51.2)"><text fill="#34ff00"
+                                                        style="animation-delay:-1.39272917058587s">５</text></g>
+                                        <g transform="translate(179.20000000000002 76.80000000000001)"><text
+                                                        fill="#34ff00"
+                                                        style="animation-delay:-1.2927291705858701s">ア</text></g>
+                                        <g transform="translate(179.20000000000002 102.4)"><text fill="#34ff00"
+                                                        style="animation-delay:-1.19272917058587s">タ</text></g>
+                                        <g transform="translate(179.20000000000002 128)"><text fill="#34ff00"
+                                                        style="animation-delay:-1.0927291705858702s">Ｗ</text></g>
+                                        <g transform="translate(179.20000000000002 153.60000000000002)"><text
+                                                        fill="#34ff00"
+                                                        style="animation-delay:-0.9927291705858701s">Ｎ</text></g>
+                                        <g transform="translate(179.20000000000002 179.20000000000002)"><text
+                                                        fill="#34ff00"
+                                                        style="animation-delay:-0.8927291705858701s">チ</text></g>
+                                        <g transform="translate(179.20000000000002 204.8)"><text fill="#34ff00"
+                                                        style="animation-delay:-0.7927291705858701s">ウ</text></g>
+                                        <g transform="translate(179.20000000000002 230.4)"><text fill="#34ff00"
+                                                        style="animation-delay:-0.69272917058587s">マ</text></g>
+                                        <g transform="translate(179.20000000000002 256)"><text fill="#34ff00"
+                                                        style="animation-delay:-0.59272917058587s">コ</text></g>
+                                        <g transform="translate(204.8 25.6)"><text fill="#34ff00"
+                                                        style="animation-delay:-1.9724592834816235s">Ｕ</text></g>
+                                        <g transform="translate(204.8 51.2)"><text fill="#34ff00"
+                                                        style="animation-delay:-1.8724592834816236s">ウ</text></g>
+                                        <g transform="translate(204.8 76.80000000000001)"><text fill="#34ff00"
+                                                        style="animation-delay:-1.7724592834816235s">Ｒ</text></g>
+                                        <g transform="translate(204.8 102.4)"><text fill="#34ff00"
+                                                        style="animation-delay:-1.6724592834816234s">Ｐ</text></g>
+                                        <g transform="translate(204.8 128)"><text fill="#34ff00"
+                                                        style="animation-delay:-1.5724592834816233s">３</text></g>
+                                        <g transform="translate(204.8 153.60000000000002)"><text fill="#34ff00"
+                                                        style="animation-delay:-1.4724592834816235s">カ</text></g>
+                                        <g transform="translate(204.8 179.20000000000002)"><text fill="#34ff00"
+                                                        style="animation-delay:-1.3724592834816236s">ネ</text></g>
+                                        <g transform="translate(204.8 204.8)"><text fill="#34ff00"
+                                                        style="animation-delay:-1.2724592834816235s">Ｆ</text></g>
+                                        <g transform="translate(204.8 230.4)"><text fill="#34ff00"
+                                                        style="animation-delay:-1.1724592834816234s">Ｄ</text></g>
+                                        <g transform="translate(204.8 256)"><text fill="#34ff00"
+                                                        style="animation-delay:-1.0724592834816236s">ソ</text></g>
+                                        <g transform="translate(230.4 25.6)"><text fill="#34ff00"
+                                                        style="animation-delay:-1.759595448843297s">Ｊ</text></g>
+                                        <g transform="translate(230.4 51.2)"><text fill="#34ff00"
+                                                        style="animation-delay:-1.6595954488432971s">ヘ</text></g>
+                                        <g transform="translate(230.4 76.80000000000001)"><text fill="#34ff00"
+                                                        style="animation-delay:-1.559595448843297s">７</text></g>
+                                        <g transform="translate(230.4 102.4)"><text fill="#34ff00"
+                                                        style="animation-delay:-1.459595448843297s">ヱ</text></g>
+                                        <g transform="translate(230.4 128)"><text fill="#34ff00"
+                                                        style="animation-delay:-1.3595954488432969s">ト</text></g>
+                                        <g transform="translate(230.4 153.60000000000002)"><text fill="#34ff00"
+                                                        style="animation-delay:-1.259595448843297s">ヤ</text></g>
+                                        <g transform="translate(230.4 179.20000000000002)"><text fill="#34ff00"
+                                                        style="animation-delay:-1.1595954488432971s">ル</text></g>
+                                        <g transform="translate(230.4 204.8)"><text fill="#34ff00"
+                                                        style="animation-delay:-1.059595448843297s">リ</text></g>
+                                        <g transform="translate(230.4 230.4)"><text fill="#34ff00"
+                                                        style="animation-delay:-0.959595448843297s">０</text></g>
+                                        <g transform="translate(230.4 256)"><text fill="#34ff00"
+                                                        style="animation-delay:-0.859595448843297s">カ</text></g>
+                                        <style type="text/css">
+                                                @keyframes ldp-matrix {
+                                                        0% {
+                                                                opacity: 1;
+                                                                fill: #c5ff10;
+                                                        }
+
+                                                        10% {
+                                                                opacity: 1;
+                                                                fill: #34ff00;
+                                                        }
+
+                                                        50% {
+                                                                opacity: 0
+                                                        }
+
+                                                        100% {
+                                                                opacity: 0
+                                                        }
+                                                }
+
+                                                text {
+                                                        animation: ldp-matrix 1s linear infinite;
+                                                        transform: scaleX(-0.7);
+                                                }
+                                        </style>
+                                </g>
+                        </g>
+                </pattern>
+        </defs>
+        <rect x="0" y="0" width="1084" height="322" fill="url(#pid-0.8830869282032572)"></rect>
+</svg>
+
+
+
+
+
+
+<div class="container fluid-container">
+        <div class="row">
+                <div class="categories col-md-3" *ngIf="categories !== null && categories.length > 0">
+                        <div class="catgory-container">
+                                <div class="inner-container">
+                                        @for (item of categories; track $index) {
+                                        <ul class="category-ul">
+                                                <li class="nav-link">
+                                                        <h4 (click)="showProductByCategoryClick(item.id)"
+                                                                class="category-model-value">
+                                                                {{item.name}}
+                                                        </h4>
+                                                </li>
+                                                <div>
+                                                        <button class="edit-btn" (click)="editCategory(item.id)">
+                                                                <i class="fa-regular fa-pen-to-square"></i>
+                                                        </button>
+                                                </div>
+                                                <div>
+                                                        <button class="remove-btn" (click)="deleteCategory(item.id)">
+                                                                <i class="fa-regular fa-trash-can"></i>
+                                                        </button>
+                                                </div>
+                                        </ul>
+                                        }
+                                </div>
+                        </div>
+                </div>
+                <div class="col product-container">
+                        <div class="row m-auto">
+                                @for (item of products; track $index) {
+                                <div class="products container col-4">
+
+                                        <ul class="ul">
+                                                <li class="nav-link">
+                                                        <h5>
+                                                                {{item.title}}
+                                                        </h5>
+                                                </li>
+                                                <li class="nav-link">
+                                                        <img class="img" loading="lazy" src="{{item.image}}">
+                                                </li>
+                                                <li class="nav-link">
+                                                        <p>
+                                                                {{item.model}} 
+                                                        </p>
+                                                </li>
+                                                <li class="nav-link">
+                                                        <p>
+                                                                {{item.price}} $
+                                                        </p>
+                                                </li>
+                                                <li class="nav-link">
+                                                        <button class="edit-btn" (click)="editProduct(item.id)">
+                                                                <i class="fa-regular fa-pen-to-square"></i>
+                                                        </button>
+                                                        <button class="remove-btn" (click)="deleteProduct(item.id)">
+                                                                <i class="fa-regular fa-trash-can"></i>
+                                                        </button>
+                                                </li>
+                                        </ul>
+                                </div>
+                                }
+                        </div>
+                </div>
+        </div>
+</div>
