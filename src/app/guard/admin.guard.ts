@@ -13,7 +13,6 @@ export const adminGuard: CanActivateFn = (route, state) => {
   let role = userRole.role
   let isLoggedIn = userService.isLoggedIn();
   if (isLoggedIn && role == 'Admin') {
-
     return true;
   } else {
     return false;

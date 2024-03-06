@@ -28,7 +28,7 @@ export class ShopingCartComponent {
   loggedUserId: string = '';
   totalQuantity: number = 0;
   savedOrders: any = [];
-  ordersUploaded:boolean = false;
+  ordersUploaded: boolean = false;
 
   orderData: Order = {
     UserId: 0,
@@ -62,22 +62,26 @@ export class ShopingCartComponent {
 
   addOrder(): void {
     let isLogged = this.userService.isLoggedIn()
-    if (isLogged) {
-      this.orderService.addOrder(this.orderData).subscribe(
-        (response) => {
-          alert("Successfully orderd")
-          this.ordersUploaded = true;
-          console.log(response);
-          this.message = 'Successfully orderd';
-          this.cartService.clearCart();
-          this.savedOrders = [];
-        },
-        (error) => {
-          console.log("Error sent orders !!!");
-        }
-      )
+    if (this.savedOrders == "") {
+      this.message = "Empty !!!"
     } else {
-      this.message = "Please Sing in !!!"
+      if (isLogged) {
+        this.orderService.addOrder(this.orderData).subscribe(
+          (response) => {
+            alert("Successfully orderd")
+            this.ordersUploaded = true;
+            this.message = 'Successfully orderd';
+            this.cartService.clearCart();
+            this.savedOrders = [];
+            console.log(response);
+          },
+          (error) => {
+            console.log("Error sent orders !!!");
+          }
+        )
+      } else {
+        this.message = "Please Sing in !!!"
+      }
     }
   }
 
