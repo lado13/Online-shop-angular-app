@@ -1,12 +1,12 @@
 body {
-    background-color: #000000;
+    background-image: url('./assets/images/liveBG.svg');
     transition: all .1s ease-in-out;
 }
 
 
 body.dark-mode {
 
-    background-color: #ffffff;
+    background-image: url('./assets/images/liveDay.svg');
     color: #000000 !important;
 
 

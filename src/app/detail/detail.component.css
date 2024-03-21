@@ -1,6 +1,6 @@
 .detail-container {
-  min-height: 90vh;
   display: flex;
+  min-height: 90vh;
 }
 .detail-container .detail-ul {
   display: flex;

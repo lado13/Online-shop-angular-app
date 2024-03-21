@@ -4,7 +4,7 @@
 
 .fluid-container {
   min-height: 110vh;
-  margin-top: 40px;
+  margin-top: 117px;
 }
 
 .catgory-container {
@@ -40,6 +40,10 @@
   justify-content: center;
 }
 
+.product-container .page-nation-container {
+  margin-top: 100px;
+  margin-bottom: 100px;
+}
 .product-container .page-nation-container .page-nation-btn .nation-btn {
   background-color: transparent;
   color: white;
@@ -63,9 +67,8 @@
   width: 333px;
   color: #ffffff;
   cursor: pointer;
-  transition: all 0.3s ease-in-out;
+  transition: all 0.2s ease-in-out;
   border-radius: 7px;
-  opacity: 0.8;
 }
 .product-container .products .ul {
   display: contents;
@@ -79,7 +82,6 @@
 .product-container .products:hover {
   transform: translateY(-10px);
   color: #2edf0b;
-  opacity: 1;
   border: 1px solid #ffffff;
 }
 
@@ -93,10 +95,11 @@
 
 .carusel-container {
   border: 1px solid #ff00ee;
-  border-radius: 76px;
-  margin-top: 34px;
+  border-radius: 18px;
+  margin-top: 120px;
   z-index: 1;
   min-height: 300px;
+  background: linear-gradient(180deg, #000000, #080b29, #000000);
 }
 .carusel-container .carusel-slide .inner-container {
   height: 298px;
@@ -110,9 +113,12 @@
 }
 .carusel-container .carusel-slide .inner-container .carusel-item .carusel-text {
   font-weight: bold;
-  font-size: 25px;
-  color: #0cffcf;
+  font-size: 20px;
+  color: #ffffff;
   text-align: end;
+}
+.carusel-container .carusel-slide .inner-container .carusel-item .carusel-text .title {
+  font-size: 30px;
 }
 
 @media (max-width: 700px) {

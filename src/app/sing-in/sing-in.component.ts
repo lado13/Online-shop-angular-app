@@ -45,11 +45,11 @@ export class SingInComponent {
         this.userService.storeToken(response.token);
         let tokenResponse = this.jwt.decodeToken(response.token.toString());
         if (tokenResponse.role == 'User') {
-          alert("User Logged")
+          // alert("User Logged")
           this.rout.navigate([''])
         }
         else if (tokenResponse.role == 'Admin') {
-          alert("Admin Logged")
+          // alert("Admin Logged")
           console.log("Admin Logged");
           this.rout.navigate(['/adminPanel'])
         }

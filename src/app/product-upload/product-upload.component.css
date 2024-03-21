@@ -1,3 +1,6 @@
+.container {
+  height: 110vh;
+}
 .container .back-btn {
   font-size: 19px;
   color: white;

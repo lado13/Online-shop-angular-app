@@ -68,7 +68,7 @@ export class ShopingCartComponent {
       if (isLogged) {
         this.orderService.addOrder(this.orderData).subscribe(
           (response) => {
-            alert("Successfully orderd")
+            // alert("Successfully orderd")
             this.ordersUploaded = true;
             this.message = 'Successfully orderd';
             this.cartService.clearCart();

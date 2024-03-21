@@ -1,8 +1,202 @@
 body {
-  background-color: #000000;
+  background-image: url("./assets/images/liveBG.svg");
+  transition: all 0.1s ease-in-out;
 }
 
 body.dark-mode {
-  background: linear-gradient(180deg, #310854, #080b29, #071627);
-  color: #fff;
+  background-image: url("./assets/images/liveDay.svg");
+  color: #000000 !important;
+}
+body.dark-mode .navbar-container {
+  background: linear-gradient(180deg, #00ff92, #00ffaf, #ffffff);
+}
+body.dark-mode .navbar-container .logo {
+  color: #000000 !important;
+}
+body.dark-mode .navbar-container .nav-link {
+  color: #000000 !important;
+}
+body.dark-mode .navbar-container .nav-link::before {
+  background-color: #4e00b4 !important;
+}
+body.dark-mode .navbar-container .user-welcome {
+  background: black;
+  border-radius: 53 !important;
+  color: #e8ff00 !important;
+  text-shadow: 4px 9px 3px rgba(0, 0, 0, 0.5) !important;
+}
+body.dark-mode .search-container {
+  background: linear-gradient(180deg, #00ff92, #00ffaf, #ffffff);
+}
+body.dark-mode .search-container .nav-item {
+  color: #000000 !important;
+}
+body.dark-mode .user-info-Container {
+  background-color: #6d50b7 !important;
+  color: #000000 !important;
+}
+body.dark-mode .carusel-container {
+  background: linear-gradient(180deg, #00ff92, #00ffaf, #00b8ff);
+  border: 1px solid #000000 !important;
+}
+body.dark-mode .carusel-container .carusel-text {
+  color: #000000 !important;
+}
+body.dark-mode .catgory-container {
+  background: linear-gradient(180deg, #00ff92, #00ffaf, #00b8ff);
+  color: #000000;
+  border: 1px solid black;
+}
+body.dark-mode .catgory-container .category-ul {
+  border: 1px solid black !important;
+}
+body.dark-mode .catgory-container .nav-link:hover {
+  background-color: #320083 !important;
+  color: #000000 !important;
+}
+body.dark-mode .catgory-container .category-model-value:hover {
+  background-color: transparent !important;
+}
+body.dark-mode .catgory-container .edit-btn {
+  color: #000000 !important;
+  border: 2px solid #31006c;
+}
+body.dark-mode .catgory-container .remove-btn {
+  color: #000000 !important;
+  border: 2px solid #ff0000;
+}
+body.dark-mode .product-container .products {
+  color: #000000 !important;
+  opacity: 1 !important;
+  border: 1px solid black !important;
+}
+body.dark-mode .product-container .edit-btn {
+  color: #000000 !important;
+  border: 2px solid #3d0088;
+}
+body.dark-mode .product-container .remove-btn {
+  color: #000000 !important;
+  border: 2px solid #ff0000;
+}
+body.dark-mode .pagination .nation-btn {
+  color: #000000 !important;
+  background: linear-gradient(180deg, #00ffb8, #00faff) !important;
+  border: none !important;
+  opacity: 1 !important;
+}
+body.dark-mode .footer {
+  background: linear-gradient(180deg, #ffffff, #00ffaf, #00ff92);
+  color: #000000 !important;
+}
+body.dark-mode .detail-container .item {
+  color: #000000 !important;
+}
+body.dark-mode .container .back-btn {
+  border: 1px solid rgb(0, 0, 0) !important;
+  color: #000000 !important;
+}
+body.dark-mode .container .text-center {
+  color: #000000 !important;
+}
+body.dark-mode .login-container {
+  border: 1px solid #000000 !important;
+}
+body.dark-mode .login-container .field-container {
+  color: #000000 !important;
+}
+body.dark-mode .login-container .field-container .form-control {
+  border-bottom: 1px solid #000000 !important;
+  color: #000000 !important;
+}
+body.dark-mode .login-container .field-container .recovery {
+  color: #00a6ff !important;
+  transition: all 0.3s ease-in-out;
+}
+body.dark-mode .login-container .field-container .recovery:hover {
+  scale: 1.1;
+  color: #5900ab !important;
+}
+body.dark-mode .car-upload-container {
+  border: 1px solid #000000;
+}
+body.dark-mode .car-upload-container .form-control {
+  border-bottom: 1px solid #000000 !important;
+  color: #000000 !important;
+}
+body.dark-mode .order-container .nav-item .order-model-title .model-title-impo {
+  color: #000000 !important;
+}
+body.dark-mode .order-container .nav-item .order-model-title .model-title {
+  color: #000000 !important;
+}
+body.dark-mode .order-container .pluse-minuse {
+  color: #000000 !important;
+}
+body.dark-mode .admin-container {
+  background: none !important;
+}
+body.dark-mode .category-upload-container .title {
+  color: #000000 !important;
+}
+body.dark-mode .category-upload-container .form-label {
+  color: #000000 !important;
+}
+body.dark-mode .category-upload-container .form-control {
+  border-bottom: 1px solid #000000 !important;
+  color: #000000 !important;
+}
+body.dark-mode .product-form .title {
+  color: #000000 !important;
+}
+body.dark-mode .product-form .form-label {
+  color: #000000 !important;
+}
+body.dark-mode .product-form .form-control {
+  border-bottom: 1px solid #000000 !important;
+  color: #000000 !important;
+}
+body.dark-mode .order-container .title {
+  color: #000000 !important;
+}
+body.dark-mode .order-container .ul {
+  border: 1px solid #000000 !important;
+}
+body.dark-mode .order-container .ul .value-container {
+  color: #000000 !important;
+}
+body.dark-mode .order-container .ul .value-container .nav-item {
+  color: #000000 !important;
+}
+body.dark-mode .order-container .order-remove-btn {
+  color: #000000 !important;
+}
+body.dark-mode .order-container .order-remove-btn:hover {
+  color: #ff0000 !important;
+}
+body.dark-mode .user-container .users-title {
+  color: #000000 !important;
+}
+body.dark-mode .user-container .li {
+  border: 1px solid #000000 !important;
+}
+body.dark-mode .user-container .li .item-value {
+  color: #000000 !important;
+}
+body.dark-mode .user-container .li .user-remove-btn {
+  color: #000000 !important;
+}
+body.dark-mode .admin-title-container {
+  color: #000000 !important;
+}
+body.dark-mode .modal-content {
+  background: linear-gradient(180deg, #00ff92, #00ffaf, #00b8ff) !important;
+  color: #000000 !important;
+}
+body.dark-mode .modal-title {
+  color: #000000 !important;
+}
+body.dark-mode .text-danger {
+  color: #ff0000;
+  font-weight: bold;
+  font-size: 15px;
 }/*# sourceMappingURL=styles.css.map */

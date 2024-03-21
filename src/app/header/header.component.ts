@@ -86,7 +86,7 @@ export default class HeaderComponent implements OnInit {
   userInfoEdit() {
     this.userService.updateUser(this.loggedUser.userId, this.updateUser).subscribe(
       (response) => {
-        alert(response.message)
+        // alert(response.message)
         console.log(response.message);
       },
       (error) => {
@@ -128,7 +128,7 @@ export default class HeaderComponent implements OnInit {
     this.rout.navigate(['']);
     this.userEmpty = false;
     this.showUserInfo = true;
-    alert("Log Out")
+    // alert("Log Out")
     console.log("Log Out !!!");
   }
 

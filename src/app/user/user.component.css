@@ -1,6 +1,10 @@
 .user-container {
   min-height: 100vh;
 }
+.user-container .users-title {
+  text-align: center;
+  color: #ffffff;
+}
 .user-container .link-container {
   width: 150px;
 }

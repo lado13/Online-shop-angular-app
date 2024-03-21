@@ -82,7 +82,7 @@ export class SingUpComponent {
       this.userService.postUserRegister(this.userRegister).subscribe(
         (response) => {
           this.message = response.message;
-          alert("User registered")
+          // alert("User registered")
           console.log(response);
           this.resetForm();
           this.rout.navigate(['singIn']);
