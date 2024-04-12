@@ -17,10 +17,12 @@ import { CommonModule } from '@angular/common';
 export class DetailComponent {
 
   constructor(
+
     private service: ProductService,
     private router: ActivatedRoute,
     private cartService: CartService,
     private user: UserService,
+    
   ) { }
 
   id: string = '';
@@ -29,18 +31,25 @@ export class DetailComponent {
   productsLoaded:boolean = false;
 
   ngOnInit(): void {
+
     this.router.params.subscribe(response => {
+
       this.id = response['id'];
       this.showProductDetail();
+
     })
   }
 
   showProductDetail() {
+
     this.service.getProduct(this.id).subscribe(
+
       (response) => {
+
         this.product = response;
         this.productsLoaded = true;
         console.log(response);
+
       },
       (error) => {
         console.log("Error fetchin product detail !!!");
@@ -49,8 +58,10 @@ export class DetailComponent {
   }
 
   addProductToCart(product: any): void {
+
     this.cartService.addToCart(product);
     this.message = this.cartService.message;
+    
   }
 
 

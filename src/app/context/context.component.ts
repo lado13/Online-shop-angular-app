@@ -15,7 +15,11 @@ import { FormsModule } from '@angular/forms';
 })
 export class ContextComponent {
 
-  constructor(private service: ProductService) { }
+  constructor(
+
+    private service: ProductService
+    
+  ) { }
 
   categories: any[] = [];
   caruselProduct: any[] = [];
@@ -36,14 +40,20 @@ export class ContextComponent {
   }
 
   generatePageSizeArray(): void {
+
     this.pageSizeArray = Array.from({ length: this.pageSize }, (_, i) => i + 1);
+
   }
 
   loadProductsByCategory(categoryID: number): void {
+
     this.categoryId = categoryID
     this.service.getProductsByCategory(categoryID, this.currentPage, this.pageSize).subscribe(
+
       (response) => {
+
         this.products = response;
+
       },
       (error) => {
         console.log(error);
@@ -52,15 +62,21 @@ export class ContextComponent {
   }
 
   onPageChange(page: number): void {
+
     this.currentPage = page;
     this.loadProductsByCategory(this.categoryId);
     this.loadProducts();
+
   }
 
   showCategories(): void {
+
     this.service.getCategory().subscribe(
+
       (response) => {
+
         this.categories = response;
+
       },
       (error) => {
         console.log(error);
@@ -69,11 +85,15 @@ export class ContextComponent {
   }
 
   loadProducts(): void {
+
     this.service.getProducts(this.currentPage, this.pageSize).subscribe(
+
       (response) => {  
+
         this.products = response.products;
         this.totalCount = response.totalCount;
         this.productsLoaded = true;
+
       }),
       (error: any) => {
         console.log(error);
@@ -81,9 +101,13 @@ export class ContextComponent {
   }
 
   loadCarusel(): void {
+
     this.service.getAllProduct().subscribe(
+
       (response) => {
+
         this.caruselProduct = response;
+        
       },
       (error) => {
         console.log(error);

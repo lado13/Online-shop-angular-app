@@ -14,10 +14,16 @@ import { RouterLink } from '@angular/router';
 })
 export class ProductUploadComponent implements OnInit {
 
-  constructor(private service: ProductService) { }
+  constructor(
+
+    private service: ProductService
+    
+  ) { }
 
   ngOnInit(): void {
+
     this.getCategories();
+
   };
   
 
@@ -27,10 +33,14 @@ export class ProductUploadComponent implements OnInit {
 
 
   getCategories(): void {
+
     this.service.getCategory().subscribe(
+
       (response: any) => {
+
         this.categories = response
         console.log(response);    
+
       },
       (error) => {
         console.error('Error fetching categories', error);
@@ -39,23 +49,33 @@ export class ProductUploadComponent implements OnInit {
   }
 
   onSubmit(): void {
+
     if (this.selectedFile) {
+
       const reader = new FileReader();
       reader.onloadend = () => {
+
         this.productData.image = reader.result as string;
         this.upload();
+
       };
+
       reader.readAsDataURL(this.selectedFile);
+
     } else {
       console.error('No file selected');
     }
   }
 
   private upload(): void {
+
     this.service.uploadProduct(this.productData).subscribe(
+
       (response) => {
+
         console.log('Product uploaded successfully', response);
         this.resetForm();
+
       },
       (error) => {
         console.error('Error uploading product', error);
@@ -64,14 +84,19 @@ export class ProductUploadComponent implements OnInit {
   }
 
   onFileSelected(event: any): void {
+
     const fileInput = event.target;
     if (fileInput.files && fileInput.files.length > 0) {
+
       this.selectedFile = fileInput.files[0];
+
     }
   }
 
   resetForm(): void {
+
     this.productData = { title: '', model: '', price: 0, image: '', categoryId: 0 }
+    
   }
 
 

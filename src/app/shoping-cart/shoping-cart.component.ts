@@ -17,10 +17,12 @@ import { CommonModule } from '@angular/common';
 export class ShopingCartComponent {
 
   constructor(
+
     private cartService: CartService,
     private orderService: OrderService,
     private userService: UserService,
     private jwtService: JwtDecodeService
+    
   ) { }
 
 
@@ -31,76 +33,113 @@ export class ShopingCartComponent {
   ordersUploaded: boolean = false;
 
   orderData: Order = {
-    UserId: 0,
-    Products: [{ ProductId: 0 }],
-    OrderDate: new Date(),
+    userId: 0,
+    productIds: [],
+    orderDate: new Date(),
   }
 
   ngOnInit(): void {
+
     this.getSavedProduct();
     this.getLoggedUserId();
     console.log(this.savedOrders);
     console.log(this.orderData);
-    this.orderData.Products = this.savedOrders.map((product: any) => ({ ProductId: product.id }));
+
   }
 
   getLoggedUserId() {
+
     let tokenId = localStorage.getItem('token')?.toString();
+
     if (tokenId) {
+
       let decodedToken = this.jwtService.decodeToken(tokenId);
+
       if (decodedToken) {
+
         this.loggedUserId = decodedToken.nameid;
-        this.orderData.UserId = parseInt(this.loggedUserId);
+        this.orderData.userId = parseInt(this.loggedUserId);
         console.log(`Decoded user ID ${this.loggedUserId}`);
+
       } else {
+
         console.error('Decoded token is undefined');
+
       }
     } else {
+
       console.error('Token ID is undefined or null');
+
     }
   }
 
   addOrder(): void {
+
     let isLogged = this.userService.isLoggedIn()
+
     if (this.savedOrders == "") {
+
       this.message = "Empty !!!"
+
     } else {
+
       if (isLogged) {
+
         this.orderService.addOrder(this.orderData).subscribe(
+
           (response) => {
             // alert("Successfully orderd")
-            this.ordersUploaded = true;
-            this.message = 'Successfully orderd';
             this.cartService.clearCart();
             this.savedOrders = [];
+            this.ordersUploaded = true;
+            this.message = 'Successfully orderd';
             console.log(response);
+
           },
           (error) => {
-            console.log("Error sent orders !!!");
+
+            console.log("Error sent orders !!!", error);
+
           }
         )
       } else {
-        this.message = "Please Sing in !!!"
+
+        this.message = "Please Sing in !!!";
+
       }
     }
   }
 
-  getSavedProduct() {
+
+  getSavedProduct(): void {
+
     this.savedOrders = this.cartService.getCartItem();
+
+    if (this.savedOrders.length > 0) {
+
+      this.orderData.productIds = this.savedOrders.map((product: any) => product.id);
+
+    }
   }
 
   removeProduct(product: any): void {
-    this.cartService.removeCart(product)
+
+    this.cartService.removeCart(product);
+
   }
 
   increaseQuantity(product: any): void {
+
     this.cartService.increaseQuantity(product);
-    this.savedOrders = this.cartService.getCartItem()
+    this.savedOrders = this.cartService.getCartItem();
+
   }
 
   decreaseQuantity(product: any): void {
+
     this.cartService.decreaseQuantity(product);
-    this.savedOrders = this.cartService.getCartItem()
+    this.savedOrders = this.cartService.getCartItem();
+    
   }
 
 

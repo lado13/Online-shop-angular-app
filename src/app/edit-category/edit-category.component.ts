@@ -15,9 +15,11 @@ export class EditCategoryComponent implements OnInit {
 
 
   constructor(
+
     private rout: ActivatedRoute,
     private productService: ProductService,
     private route: Router
+    
   ) { }
 
 
@@ -27,17 +29,24 @@ export class EditCategoryComponent implements OnInit {
   }
 
   ngOnInit(): void {
+
     this.rout.params.subscribe(response => {
+
       this.newcategory.Id = response['id'];
+
     })
   }
 
   updateCategory(): void {
+
     this.productService.updateCategory(this.newcategory.Id!, this.newcategory).subscribe(
+
       () => {
+
         this.resetForm();
         this.route.navigate(['adminPanel']);
         console.log('Category updated successfully');
+
       },
       error => {
         console.error('Error updating category:', error);
@@ -46,7 +55,9 @@ export class EditCategoryComponent implements OnInit {
   }
 
   resetForm(): void {
+
     this.newcategory = { Name: '' };
+    
   }
 
 

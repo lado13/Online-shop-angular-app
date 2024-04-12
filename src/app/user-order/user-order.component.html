@@ -1,8 +1,6 @@
-
-
-<svg *ngIf="!ordersLoaded" class="admin-loading" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-    style="margin:auto;background:#fff;display:block;" width="200px" height="200px" viewBox="0 0 100 100"
-    preserveAspectRatio="xMidYMid">
+<svg *ngIf="!ordersLoaded" class="admin-loading" xmlns="http://www.w3.org/2000/svg"
+    xmlns:xlink="http://www.w3.org/1999/xlink" style="margin:auto;background:#fff;display:block;" width="200px"
+    height="200px" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid">
     <g transform="translate(50 50)">
         <g transform="translate(-19 -19) scale(0.6)">
             <g>
@@ -47,6 +45,12 @@
                     </h3>
                 </div>
                 <div class="model-title">
+                    <label class="item-model">Avatar</label>
+                    <h3 class="model-value">
+                        <img class="user-order-img" loading="lazy" src="{{item.avatar}}">
+                    </h3>
+                </div>
+                <div class="model-title">
                     <label class="item-model">Name</label>
                     <h3 class="model-value">
                         {{item.firstName}}
@@ -59,7 +63,7 @@
                         {{item.lastName}}
                     </h3>
                 </div>
-                <div class="model-title me-lg-5">
+                <div class="model-title me-lg-3">
                     <label class="item-model">Email</label>
                     <h3 class="model-value">
                         {{item.email}}
@@ -99,6 +103,12 @@
                     <label class="item-model">Price</label>
                     <h3 class="model-value">
                         {{item.price}}
+                    </h3>
+                </div>
+                <div class="model-title">
+                    <label class="item-model">Order Date</label>
+                    <h3 class="model-value">
+                        {{item.orderDate}}
                     </h3>
                 </div>
                 <div class="model-title">

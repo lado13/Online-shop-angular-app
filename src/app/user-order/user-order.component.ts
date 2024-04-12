@@ -18,36 +18,50 @@ import { error } from 'console';
 export class UserOrderComponent implements OnInit {
 
   constructor(
+
     private service: ProductService,
     private orderService: OrderService
+    
   ) { }
 
   orders: any[] = [];
   ordersLoaded = false;
 
   ngOnInit(): void {
+
     this.getOrders();
+
   }
 
   getOrders(): void {
+
     this.service.getOrder().subscribe(
+
       (response) => {
+
         this.ordersLoaded = true;
         this.orders = response;
         console.log(response);
+
       },
       (error) => {
+
         console.log("Error log orders !!!");
+
       }
     )
   }
 
   deleteOrderById(orderID: number) {
+
     console.log(orderID);
     this.orderService.removeOrder(orderID).subscribe(
+
       (response) => {
+
         this.orders = this.orders.filter(o => o.orderId !== orderID);
         console.log("Succesfully remove");
+        
       },
       (error) => {
         console.log("Error remove order !!!");

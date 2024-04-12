@@ -13,21 +13,31 @@ import { CommonModule } from '@angular/common';
 })
 export class UserComponent implements OnInit {
 
-  constructor(private userService: UserService) { }
+  constructor(
+
+    private userService: UserService
+    
+  ) { }
 
   users: any[] = [];
   ordersLoaded = false;
 
   ngOnInit(): void {
+
     this.loadUsers();
+
   }
 
   loadUsers() {
+
     this.userService.getAllUser().subscribe(
+
       (response) => {
+
         this.users = response;
         this.ordersLoaded = true;
         console.log(response);
+
       },
       (error) => {
         console.log(error);
@@ -36,10 +46,14 @@ export class UserComponent implements OnInit {
   }
 
   removeUser(userID: number) {
+
     this.userService.deleteUserById(userID).subscribe(
+
       (response) => {
+
         this.users = this.users.filter(u => u.id !== userID);
         console.log("Succesfully remove user");
+        
       },
       (error) => {
         console.log("Error remove user !!!");

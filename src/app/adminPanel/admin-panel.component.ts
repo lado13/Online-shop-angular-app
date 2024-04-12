@@ -16,8 +16,10 @@ import { error, log } from 'console';
 export class AdminPanelComponent {
 
   constructor(
+
     private service: ProductService,
     private rout: Router
+    
   ) { }
 
   categories: any[] = [];
@@ -30,9 +32,13 @@ export class AdminPanelComponent {
   }
 
   showCategories(): void {
+
     this.service.getCategory().subscribe(
+
       (response) => {
+
         this.categories = response;
+
       },
       (error) => {
         console.log("Error fetching categories !!!");
@@ -41,9 +47,13 @@ export class AdminPanelComponent {
   }
 
   showProductByCategoryClick(productID: number): void {
+
     this.service.getProductByCategory(productID).subscribe(
+
       (response) => {
+
         this.products = response;
+
       },
       (error) => {
         console.log(error);
@@ -52,10 +62,14 @@ export class AdminPanelComponent {
   }
 
   loadAllProducts(): void {
+
     this.service.getAllProduct().subscribe(
+
       (response) => {
+
         this.products = response;
         this.productsLoaded = true;
+
       },
       (error) => {
         console.log(error);
@@ -64,10 +78,14 @@ export class AdminPanelComponent {
   }
 
   deleteProduct(productId: string): void {
+
     this.service.removeProduct(productId).subscribe(
+
       () => {
+
         console.log("Product removed", productId);
         this.products = this.products.filter(product => product.id !== productId);
+
       },
       (error) => {
         console.log("Error removing product", error);
@@ -76,10 +94,14 @@ export class AdminPanelComponent {
   }
 
   deleteCategory(categoryID: string): void {
+
     this.service.removeCategory(categoryID).subscribe(
+
       () => {
+
         console.log("category removed", categoryID);
         this.categories = this.categories.filter(category => category.id !== categoryID);
+
       },
       () => {
         console.log("Error remove category !!!");
@@ -88,11 +110,15 @@ export class AdminPanelComponent {
   }
 
   editCategory(id: number) {
-    this.rout.navigate(['editCategory', id])
+
+    this.rout.navigate(['editCategory', id]);
+
   }
 
   editProduct(id: number) {
-    this.rout.navigate(['editProduct', id])
+
+    this.rout.navigate(['editProduct', id]);
+
   }
 
 

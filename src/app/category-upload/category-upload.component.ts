@@ -15,21 +15,31 @@ import { RouterLink } from '@angular/router';
 })
 export class CategoryUploadComponent {
 
-  constructor(private categoryService: ProductService) { }
+  constructor(
+
+    private categoryService: ProductService
+    
+  ) { }
 
   categoryData: Category = {
     Name: '',
   }
 
   onSubmit() {
+
     this.uploadCategory();
+
   }
 
   uploadCategory() {
+
     this.categoryService.postCategory(this.categoryData).subscribe(
+
       (response) => {
+
         this.resetForm();
         console.log(response);
+
       },
       (error) => {
         console.log("Error upload category !!!");
@@ -38,7 +48,9 @@ export class CategoryUploadComponent {
   }
 
   resetForm(): void {
+
     this.categoryData = { Name: '' };
+    
   }
 
 
