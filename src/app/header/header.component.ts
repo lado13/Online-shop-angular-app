@@ -7,8 +7,8 @@ import { CommonModule } from '@angular/common';
 import { HostListener } from '@angular/core';
 import { ElementRef } from '@angular/core';
 import { ThemeService } from '../Service/themeService/theme.service';
-import { response } from 'express';
 import { JwtDecodeService } from '../jwtDecode/jwt-decode.service';
+import { CartService } from '../Service/cartService/cart.service';
 
 
 @Component({
@@ -27,7 +27,8 @@ export default class HeaderComponent implements OnInit {
     private rout: Router,
     private elementRef: ElementRef,
     private themeService: ThemeService,
-    private jwtService: JwtDecodeService
+    private jwtService: JwtDecodeService,
+    private cartService: CartService
 
   ) { }
 
@@ -39,6 +40,7 @@ export default class HeaderComponent implements OnInit {
   showUserInfo: boolean = true;
   userEmpty: boolean = true;
   selectedFile: File | null = null;
+  cartItemTotal:number = 0;
 
   loggedUser: any = {
 
@@ -59,6 +61,8 @@ export default class HeaderComponent implements OnInit {
 
     this.loadLoggedUser();
     this.themeService.ngOnInit();
+    this.cartItemTotal = this.cartService.cartQuantity();
+    
 
   }
 

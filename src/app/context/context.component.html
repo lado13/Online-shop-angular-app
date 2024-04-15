@@ -42,8 +42,34 @@
 
 
 
+
+
 <div class="container fluid-container">
+
+    <h3 class="text-warning">Filter By Price</h3>
+
+    <form (ngSubmit)="filterByPrice()" class="price-filter-form">
+        <div class="input-container">
+            <input class="inp-price" id="minPrice" name="minPrice" placeholder="Min" [(ngModel)]="minPrice" required>
+        </div>
+        <p class="m-0 ms-2 me-2 text-white">To</p>
+        <div class="input-container">
+            <input class="inp-price" id="maxPrice" name="maxPrice" placeholder="Max" [(ngModel)]="maxPrice" required>
+        </div>
+        <button type="submit" class="price-filter-btn ms-2">
+            <i class="fa-solid fa-filter"></i>
+        </button>
+    </form>
+
+
+
+
+
     <div class="row">
+        <h3 class="text-warning mt-2 mb-3">
+            Categories
+            <i class="text-info fa-solid fa-circle-arrow-down"></i>
+        </h3>
         <div class="categories col-md-2" *ngIf="categories !== null && categories.length > 0">
             <div class="catgory-container">
                 <div class="inner-container">
@@ -75,7 +101,7 @@
                         </li>
                         <li class="nav-link">
                             <p>
-                                {{item.price}} $
+                                Price {{item.price}} $
                             </p>
                         </li>
                     </ul>

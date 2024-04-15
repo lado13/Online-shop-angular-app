@@ -5,6 +5,50 @@
 .fluid-container {
     min-height: 110vh;
     margin-top: 117px;
+
+    .price-filter-form{
+
+        display: flex;
+        align-items: center;
+        padding: 25px;
+
+        .input-container{
+            background: linear-gradient(180deg, #23765f, #080b29, #8d0cff);
+            width: fit-content;
+    
+            .inp-price{
+                max-width: 45px;
+                border: none;
+                background-color: #323452;
+                color: #ffffff;
+                margin: 2px;
+            }
+
+
+            .inp-price::placeholder {
+                color: white; 
+              }
+
+        
+
+        }
+
+        .price-filter-btn{
+            background-color: transparent;
+            color: #bfff00;
+            border: none;
+            transition: all .2s ease-in-out;
+        }
+        .price-filter-btn:hover{
+            scale: 1.3;
+        }
+
+    
+
+    }
+
+   
+
 }
 
 .catgory-container {

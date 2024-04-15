@@ -4,6 +4,7 @@ import { CommonModule } from '@angular/common';
 import { RouterLink } from '@angular/router';
 import { Product } from '../Interface/IProduct/product';
 import { FormsModule } from '@angular/forms';
+import { max } from 'rxjs';
 
 
 @Component({
@@ -18,7 +19,7 @@ export class ContextComponent {
   constructor(
 
     private service: ProductService
-    
+
   ) { }
 
   categories: any[] = [];
@@ -30,14 +31,41 @@ export class ContextComponent {
   categoryId: number = 0
   totalCount: number = 0;
   pageSizeArray: number[] = [];
+  minPrice: number = 0;
+  maxPrice: number = 0;
+
 
 
   ngOnInit(): void {
+
     this.showCategories();
     this.loadProducts();
     this.loadCarusel();
     this.generatePageSizeArray();
+    this.filterByPrice();
+    
   }
+
+  filterByPrice() {
+
+    this.service.getProductByPrice(this.minPrice, this.maxPrice).subscribe(
+
+      (res) => {
+
+        this.products = res
+        console.log(res);
+        this.minPrice = 0;  
+        this.maxPrice = 0;
+
+      },
+      (error) => {
+        console.error(error);
+      }
+    );
+  }
+  
+
+
 
   generatePageSizeArray(): void {
 
@@ -88,7 +116,7 @@ export class ContextComponent {
 
     this.service.getProducts(this.currentPage, this.pageSize).subscribe(
 
-      (response) => {  
+      (response) => {
 
         this.products = response.products;
         this.totalCount = response.totalCount;
@@ -107,7 +135,7 @@ export class ContextComponent {
       (response) => {
 
         this.caruselProduct = response;
-        
+
       },
       (error) => {
         console.log(error);
