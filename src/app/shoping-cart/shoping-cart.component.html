@@ -4083,13 +4083,23 @@
 
 
 <div class="container order-container">
-    
+
     <div class="row">
+
+        <div>
+            <h5 class="float-end text-white text-decoration-underline">
+                Total Price:  
+                <span class="text-warning">{{totalPrice}}</span> 
+                $
+            </h5>
+        </div>
+
         <button class="float-end mt-5 order-btn " (click)="addOrder()">{{message}}</button>
+
         <div class="col-md-4  w-100 ">
             @for (item of savedOrders; track $index) {
             <ul class="nav-item">
-                
+
                 <li class="nav-link d-flex">
                     <img class="image" src="{{item.image}}">
                     <div class="d-block w-25 ms-5 order-model-title">

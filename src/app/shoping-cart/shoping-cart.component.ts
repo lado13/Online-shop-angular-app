@@ -22,7 +22,7 @@ export class ShopingCartComponent {
     private orderService: OrderService,
     private userService: UserService,
     private jwtService: JwtDecodeService
-    
+
   ) { }
 
 
@@ -31,6 +31,7 @@ export class ShopingCartComponent {
   totalQuantity: number = 0;
   savedOrders: any = [];
   ordersUploaded: boolean = false;
+  totalPrice: number = 0;
 
   orderData: Order = {
     userId: 0,
@@ -42,9 +43,18 @@ export class ShopingCartComponent {
 
     this.getSavedProduct();
     this.getLoggedUserId();
+    this.calculateTotalPrice();
     console.log(this.savedOrders);
     console.log(this.orderData);
+    console.log(this.totalPrice);
 
+  }
+
+
+  calculateTotalPrice() {
+
+    this.totalPrice = this.savedOrders.reduce((total:any, item: any) => total + item.price, 0);
+    
   }
 
   getLoggedUserId() {
@@ -79,7 +89,7 @@ export class ShopingCartComponent {
 
     if (this.savedOrders == "") {
 
-      this.message = "Empty !!!"
+      this.message = "Empty !"
 
     } else {
 
@@ -104,7 +114,7 @@ export class ShopingCartComponent {
         )
       } else {
 
-        this.message = "Please Sing in !!!";
+        this.message = "Please Sing in !";
 
       }
     }
@@ -125,6 +135,7 @@ export class ShopingCartComponent {
   removeProduct(product: any): void {
 
     this.cartService.removeCart(product);
+    this.calculateTotalPrice();
 
   }
 
@@ -139,7 +150,7 @@ export class ShopingCartComponent {
 
     this.cartService.decreaseQuantity(product);
     this.savedOrders = this.cartService.getCartItem();
-    
+
   }
 
 

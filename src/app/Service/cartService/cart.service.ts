@@ -21,8 +21,7 @@ export class CartService {
 
   cartQuantity() {
 
-    const totalQuantity = this.productsCart.reduce((total, product) => total + product.quantity, 0);
-    return totalQuantity;
+    return this.productsCart.reduce((total, product) => total + product.quantity, 0);
 
   }
 
@@ -49,7 +48,7 @@ export class CartService {
   private saveCart(): void {
 
     localStorage.setItem(this.storageKey, JSON.stringify(this.productsCart));
-    
+
   }
 
   // private LoadCart(): void {
@@ -74,7 +73,7 @@ export class CartService {
     } else {
 
       console.error('localStorage is not available.');
-   
+
     }
   }
 
