@@ -1,37 +1,54 @@
+
 <div class="container">
+
+      <!-- turns back -->
+
     <button class="btn back-btn" [routerLink]="['/adminPanel']">Go Back</button>
 
     <div class="product-upload-container center">
         
         <form class="product-form" #prodForm="ngForm" (ngSubmit)="onSubmit()">
+
             <h2 class="title mb-5">Update Product</h2>
+
             <div class="form-item">
                 <label class="form-label" for="manufacturer">Title</label>
                 <input class="form-control" type="text" id="title" name="title" [(ngModel)]="newProduct.title" required>
             </div>
+
             <div class="form-item">
                 <label class="form-label" for="model">Model</label>
                 <input class="form-control" type="text" id="model" name="model" [(ngModel)]="newProduct.model" required>
             </div>
+
             <div class="form-item">
                 <label class="form-label" for="year">Price</label>
                 <input class="form-control" type="number" id="price" name="price" [(ngModel)]="newProduct.price"
                     required>
             </div>
+
             <div class="form-item">
                 <label class="form-label" for="image">Image</label>
                 <input class="form-control" type="file" id="image" name="image" (change)="onFileSelected($event)"
                     required>
             </div>
+
             <div class="form-item">
+
+                <!-- All categories will be displayed with the select tag 
+                    so that the admin can select a category when adding a product -->
+
                 <select class="category-select" [(ngModel)]="newProduct.categoryId" name="categoryId">
                     <option *ngFor="let category of categories" [value]="category.id">{{ category.name }}</option>
                 </select>
+                
             </div>
+
             <div>
                 <button class="btn btn-primary w-100" type="submit" [disabled]="prodForm.invalid">Update
                     Product</button>
             </div>
+
         </form>
     </div>
 </div>

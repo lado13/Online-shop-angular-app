@@ -28,6 +28,8 @@ export class UserComponent implements OnInit {
 
   }
 
+  // Loads all users
+
   loadUsers() {
 
     this.userService.getAllUser().subscribe(
@@ -44,6 +46,9 @@ export class UserComponent implements OnInit {
       }
     )
   }
+
+
+  // Removing user by ID
 
   removeUser(userID: number) {
 

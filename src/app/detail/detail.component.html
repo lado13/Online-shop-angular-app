@@ -1,4 +1,6 @@
 
+<!-- Loading animation -->
+
 <svg class="loading" *ngIf="!productsLoaded" xmlns="http://www.w3.org/2000/svg"
     xmlns:xlink="http://www.w3.org/1999/xlink" style="margin: auto; background: rgb(241, 242, 243); display: block;"
     width="200px" height="200px" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid">
@@ -13,38 +15,56 @@
 </svg>
 
 
+<!-- Displays detailed product information -->
 
 <div class="detail-container container">
+
     @if (product) {
+
     <ul class="detail-ul">
+
         <li class="detail-li">
+
             <img class="detail-img" src="{{product.image}}" alt="Product">
+
         </li>
+
         <li class="detail-text">
+
             <div class="item">
+
                 <h1 class="modelTitle">Title</h1>
                 <h2>{{product.title}}</h2>
+
             </div>
+
             <div class="item">
+
                 <h3 class="modelTitle">Model</h3>
                 <h3>{{product.model}}</h3>
+
             </div>
+
             <div class="item">
+
                 <h3 class="modelTitle">Price</h3>
                 <h3>{{product.price}} $</h3>
+
             </div>
 
+            
+            <!-- Shows Add to Cart button -->
 
             <div class="detail-inner-container">
+
                 <button class="detail-btn" (click)="addProductToCart(product)">{{message}}</button>
                 <a class="detail-link" [routerLink]="['']">Go back</a>
+
             </div>
 
 
 
         </li>
-
-
     </ul>
 
     }

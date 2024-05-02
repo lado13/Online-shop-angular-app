@@ -1,3 +1,8 @@
+
+
+
+<!-- loading animation -->
+
 <svg *ngIf="!ordersLoaded" class="admin-loading" xmlns="http://www.w3.org/2000/svg"
     xmlns:xlink="http://www.w3.org/1999/xlink" style="margin:auto;background:#fff;display:block;" width="200px"
     height="200px" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid">
@@ -29,6 +34,8 @@
 
 <div class="container user-container">
 
+    <!-- turns back to the admin panel -->
+
     <div class="link-container" [routerLink]="['/adminPanel']">
         <a class="nav-link back-btn">Go Back</a>
     </div>
@@ -39,9 +46,16 @@
     <div class="row">
         
         <div class="col">
+
+
+            <!-- showing users information  -->
+
             @for (item of users; track $index) {
+
             <ul class="navbar-nav ul">
+
                 <li class="nav-item li">
+
                     <div class="item-container">
                         <span class="item-model">User ID: </span>
                         <h4 class="item-value">
@@ -87,16 +101,17 @@
                             {{item.role}}
                         </h4>
                     </div>
+
                     <div class="item-container">
                         <button class="user-remove-btn" (click)="removeUser(item.id)">
                             <i class="fa-solid fa-user-slash"></i>
                         </button>
                     </div>
+
                 </li>
             </ul>
-
             }
+
         </div>
     </div>
-
 </div>

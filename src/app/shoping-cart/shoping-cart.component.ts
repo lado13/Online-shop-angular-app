@@ -34,9 +34,11 @@ export class ShopingCartComponent {
   totalPrice: number = 0;
 
   orderData: Order = {
+
     userId: 0,
     productIds: [],
     orderDate: new Date(),
+
   }
 
   ngOnInit(): void {
@@ -51,11 +53,18 @@ export class ShopingCartComponent {
   }
 
 
+
+  // Calculates the total amount of the order
+
   calculateTotalPrice() {
 
     this.totalPrice = this.savedOrders.reduce((total:any, item: any) => total + item.price, 0);
     
   }
+
+
+
+  // I get the authorized user id
 
   getLoggedUserId() {
 
@@ -82,6 +91,11 @@ export class ShopingCartComponent {
 
     }
   }
+
+
+
+
+  // Sends the order to the backend
 
   addOrder(): void {
 
@@ -121,6 +135,10 @@ export class ShopingCartComponent {
   }
 
 
+
+
+  // Loads stored products
+
   getSavedProduct(): void {
 
     this.savedOrders = this.cartService.getCartItem();
@@ -132,6 +150,12 @@ export class ShopingCartComponent {
     }
   }
 
+
+
+
+
+  // Removes the product from the cart
+
   removeProduct(product: any): void {
 
     this.cartService.removeCart(product);
@@ -139,12 +163,18 @@ export class ShopingCartComponent {
 
   }
 
+
+   // Increases the quantity of a particular product by one
+
   increaseQuantity(product: any): void {
 
     this.cartService.increaseQuantity(product);
     this.savedOrders = this.cartService.getCartItem();
 
   }
+
+
+  // Reduces the quantity of a particular product by one
 
   decreaseQuantity(product: any): void {
 

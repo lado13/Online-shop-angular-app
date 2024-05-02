@@ -19,7 +19,7 @@ export class SingUpComponent {
 
     private userService: UserService,
     private rout: Router
-    
+
   ) { }
 
   userRegister: User = {
@@ -40,6 +40,10 @@ export class SingUpComponent {
 
 
 
+
+
+  // Sends new user data to the backend
+
   onSubmit(): void {
 
     if (this.selectedFile == null) {
@@ -48,6 +52,10 @@ export class SingUpComponent {
 
     }
     if (this.selectedFile) {
+
+
+
+      // I use the image to upload
 
       const reader = new FileReader();
       reader.onloadend = () => {
@@ -65,6 +73,9 @@ export class SingUpComponent {
     }
   }
 
+
+  // I use the image to upload
+
   onFileSelected(event: any): void {
 
     const fileInput = event.target;
@@ -74,6 +85,9 @@ export class SingUpComponent {
 
     }
   }
+
+
+  // Validation errors
 
   onSubmitRegistration(): void {
 
@@ -88,14 +102,21 @@ export class SingUpComponent {
 
   }
 
+
+
+  // This pattern checks for a valid email
+
   checkValidEmail(event: string) {
 
     let value = event;
-    let pattern = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/;
+    let pattern = /^[\w\.]+@([\w-]+\.)+[\w-]{2,4}$/;
     this.isValidEmail = pattern.test(value);
     return this.isValidEmail;
 
   }
+
+
+  // Registers a new user
 
   userRegistration(): void {
 
@@ -122,6 +143,9 @@ export class SingUpComponent {
     }
   }
 
+
+  // Clears the fields
+
   resetForm(): void {
 
     this.userRegister = { firstName: '', lastName: '', image: '', age: 0, email: '', password: '' }
@@ -129,16 +153,20 @@ export class SingUpComponent {
 
   }
 
+  // Makes the password readable
+
   togglePasswordVisibility() {
 
     this.showPassword = !this.showPassword;
 
   }
 
+  // Makes the password readable
+
   togglePasswordRepeateVisibility() {
 
     this.showRepeatPassword = !this.showRepeatPassword;
-    
+
   }
 
 

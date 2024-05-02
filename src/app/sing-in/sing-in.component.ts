@@ -32,16 +32,25 @@ export class SingInComponent {
   message: string = '';
 
   login: UserLogin = {
+
     email: '',
     password: ''
+
   }
 
+
+
+  // Sends the user's authentication data to the backend
 
   onSubmitLogin(): void {
 
     this.userLogin();
 
   }
+
+
+  // During authentication, it checks the role of the user, if it is admin, 
+  // it redirects to the admin page
 
   userLogin(): void {
 
@@ -78,20 +87,30 @@ export class SingInComponent {
     )
   }
 
+
+  // Cleans the field
+
   resetForm(): void {
 
     this.login = { email: '', password: '' }
 
   }
 
+
+  // This pattern checks for a valid email
+
   checkValidEmail(event: string) {
 
     let value = event;
-    let pattern = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/;
+    let pattern = /^[\w\.]+@([\w-]+\.)+[\w-]{2,4}$/;
     this.isValidEmail = pattern.test(value);
     return this.isValidEmail;
 
   }
+
+
+
+  // Checks for valid email
 
   confirmToSend() {
 
@@ -107,6 +126,9 @@ export class SingInComponent {
 
     }
   }
+
+
+   // When retrieving a password, it sends a valid email to check if it exists in the database
 
   requestPasswordReset(email: string) {
 
@@ -126,6 +148,9 @@ export class SingInComponent {
       }
     )
   }
+
+
+  // Makes the password readable
 
   togglePasswordVisibility() {
 

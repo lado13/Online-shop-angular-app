@@ -15,6 +15,7 @@ export class ProductService {
   private apiUrl = 'https://localhost:7241/api';
 
 
+  
 
   getCategory(): Observable<any> {
 
@@ -22,6 +23,7 @@ export class ProductService {
     return this.http.get<any>(url);
 
   }
+
 
   updateProduct(id: number, product: Product) {
 

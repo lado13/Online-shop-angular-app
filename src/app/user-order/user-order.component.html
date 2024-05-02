@@ -1,3 +1,5 @@
+<!-- loading animation -->
+
 <svg *ngIf="!ordersLoaded" class="admin-loading" xmlns="http://www.w3.org/2000/svg"
     xmlns:xlink="http://www.w3.org/1999/xlink" style="margin:auto;background:#fff;display:block;" width="200px"
     height="200px" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid">
@@ -26,30 +28,45 @@
 
 
 <div class="container order-container">
+
     <h1 class="title">User orders</h1>
+
+    <!-- turns back to the admin panel -->
+
     <a class="nav-link back-btn" [routerLink]="['/adminPanel']">Go back</a>
+
+
+    <!-- showing all users orders -->
+
     @for (item of orders; track $index) {
+
     <ul class="navbar-nav ul">
+
         <div class="value-container">
+
             <li class="nav-item">
+
                 <div class="model-title">
                     <label class="item-model">OrderId</label>
                     <h3 class="model-value">
                         {{item.orderId}}
                     </h3>
                 </div>
+
                 <div class="model-title">
                     <label class="item-model">UserId</label>
                     <h3 class="model-value">
                         {{item.userId}}
                     </h3>
                 </div>
+
                 <div class="model-title">
                     <label class="item-model">Avatar</label>
                     <h3 class="model-value">
                         <img class="user-order-img" loading="lazy" src="{{item.avatar}}">
                     </h3>
                 </div>
+
                 <div class="model-title">
                     <label class="item-model">Name</label>
                     <h3 class="model-value">
@@ -63,63 +80,77 @@
                         {{item.lastName}}
                     </h3>
                 </div>
+
                 <div class="model-title me-lg-3">
                     <label class="item-model">Email</label>
                     <h3 class="model-value">
                         {{item.email}}
                     </h3>
                 </div>
+
                 <div class="model-title ms-lg-3">
                     <label class="item-model">Role</label>
                     <h3 class="model-value">
                         {{item.role}}
                     </h3>
                 </div>
+
                 <div class="model-title">
                     <label class="item-model">ProductId</label>
                     <h3 class="model-value">
                         {{item.productId}}
                     </h3>
                 </div>
+
                 <div class="model-title">
                     <label class="item-model">Image</label>
                     <h3 class="model-value">
                         <img class="user-order-img" loading="lazy" src="{{item.image}}">
                     </h3>
                 </div>
+
                 <div class="model-title">
                     <label class="item-model">Title</label>
                     <h3 class="model-value">
                         {{item.title}}
                     </h3>
                 </div>
+
                 <div class="model-title">
                     <label class="item-model">Model</label>
                     <h3 class="model-value">
                         {{item.model}}
                     </h3>
                 </div>
+
                 <div class="model-title">
                     <label class="item-model">Price</label>
                     <h3 class="model-value">
                         {{item.price}}
                     </h3>
                 </div>
+
                 <div class="model-title">
                     <label class="item-model">Order Date</label>
                     <h3 class="model-value">
                         {{item.orderDate}}
                     </h3>
                 </div>
+
                 <div class="model-title">
                     <h3 class="model-value">
+
+                        <!-- removing user order -->
+
                         <button class="order-remove-btn" (click)="deleteOrderById(item.orderId)">
                             <i class="fa-solid fa-folder-minus"></i>
                         </button>
                     </h3>
                 </div>
+
             </li>
         </div>
     </ul>
     }
+
 </div>

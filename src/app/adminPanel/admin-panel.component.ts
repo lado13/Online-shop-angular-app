@@ -15,21 +15,32 @@ import { error, log } from 'console';
 })
 export class AdminPanelComponent {
 
+
   constructor(
 
     private service: ProductService,
     private rout: Router
-    
+
   ) { }
+
 
   categories: any[] = [];
   products: any[] = [];
+
+  // loading animation
   productsLoaded: boolean = false;
 
+
   ngOnInit(): void {
+
     this.showCategories();
     this.loadAllProducts();
+
   }
+
+
+
+  // Displays all categories
 
   showCategories(): void {
 
@@ -46,6 +57,12 @@ export class AdminPanelComponent {
     )
   }
 
+
+
+
+
+  // Filters products by category on click
+
   showProductByCategoryClick(productID: number): void {
 
     this.service.getProductByCategory(productID).subscribe(
@@ -60,6 +77,11 @@ export class AdminPanelComponent {
       }
     )
   }
+
+
+
+
+  // Loads all products
 
   loadAllProducts(): void {
 
@@ -77,6 +99,9 @@ export class AdminPanelComponent {
     )
   }
 
+
+  // Deletes the product
+
   deleteProduct(productId: string): void {
 
     this.service.removeProduct(productId).subscribe(
@@ -92,6 +117,11 @@ export class AdminPanelComponent {
       }
     )
   }
+
+
+
+
+  // Removes a category
 
   deleteCategory(categoryID: string): void {
 
@@ -109,11 +139,18 @@ export class AdminPanelComponent {
     )
   }
 
+
+
+  // Updates the category name
+
   editCategory(id: number) {
 
     this.rout.navigate(['editCategory', id]);
 
   }
+
+
+  // Updates the product title
 
   editProduct(id: number) {
 

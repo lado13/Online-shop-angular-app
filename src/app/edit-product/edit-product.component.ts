@@ -41,12 +41,18 @@ export class EditProductComponent {
   ngOnInit(): void {
 
     this.getCategories();
+
+    // By rout, I get the id and on which product I can change the title
+
     this.rout.params.subscribe(response => {
 
       this.newProduct.id = response['id'];
 
     })
   }
+
+
+  // Loading categories
 
   getCategories(): void {
 
@@ -63,6 +69,9 @@ export class EditProductComponent {
       }
     )
   }
+
+
+  // Updates products
 
   updateProduct() {
 
@@ -81,9 +90,14 @@ export class EditProductComponent {
     )
   }
 
+
+  // All information is sent to the back on submit
+
   onSubmit(): void {
 
     if (this.selectedFile) {
+
+      // I use the file in this case to upload the image
 
       const reader = new FileReader();
       reader.onloadend = () => {
@@ -101,6 +115,8 @@ export class EditProductComponent {
     }
   }
 
+  // I use the file in this case to upload the image
+
   onFileSelected(event: any): void {
 
     const fileInput = event.target;
@@ -111,6 +127,7 @@ export class EditProductComponent {
     }
   }
 
+  // Clears fields
 
   resetForm(): void {
 

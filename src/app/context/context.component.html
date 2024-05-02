@@ -1,3 +1,4 @@
+<!-- Loading animation -->
 <svg class="loading" *ngIf="!productsLoaded" xmlns="http://www.w3.org/2000/svg"
     xmlns:xlink="http://www.w3.org/1999/xlink" style="margin: auto; background: rgb(241, 242, 243); display: block;"
     width="200px" height="200px" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid">
@@ -13,29 +14,48 @@
 
 
 
+
+<!-- Shows a carousel with moving products -->
+
 <div class="container carusel-container">
+
     <div id="carouselExampleAutoplaying" class="carousel slide carusel-slide" data-bs-ride="carousel">
+
         <div class="carousel-inner  inner-container">
+
             <div class="carousel-item active carusel-item" *ngFor="let product of caruselProduct; let i = index"
                 [class.active]="i === 0">
+
+
+                <!-- When clicked, it goes to the detailed page through the id -->
+
                 <img [routerLink]="['/products',product.id]" [src]="product.image" class="d-block  carusel-img"
                     alt="{{ product.title }}">
+
                 <div class="carousel-caption d-none d-md-block carusel-text">
+
                     <p class="title">Title: {{product.title}}</p>
                     <p>Model: {{product.model}}</p>
                     <p>Price: {{product.price}} $</p>
+
                 </div>
             </div>
         </div>
+
         <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying"
             data-bs-slide="prev">
+
             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
             <span class="visually-hidden">Previous</span>
+
         </button>
+
         <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying"
             data-bs-slide="next">
+
             <span class="carousel-control-next-icon" aria-hidden="true"></span>
             <span class="visually-hidden">Next</span>
+
         </button>
     </div>
 </div>
@@ -43,21 +63,34 @@
 
 
 
+<!-- Content -->
 
 <div class="container fluid-container">
+
+    <!-- Displays a field for filtering products by price -->
 
     <h3 class="text-warning">Filter By Price</h3>
 
     <form (ngSubmit)="filterByPrice()" class="price-filter-form">
+
         <div class="input-container">
+
             <input class="inp-price" id="minPrice" name="minPrice" placeholder="Min" [(ngModel)]="minPrice" required>
+
         </div>
+
         <p class="m-0 ms-2 me-2 text-white">To</p>
+
         <div class="input-container">
+
             <input class="inp-price" id="maxPrice" name="maxPrice" placeholder="Max" [(ngModel)]="maxPrice" required>
+
         </div>
+
         <button type="submit" class="price-filter-btn ms-2">
+
             <i class="fa-solid fa-filter"></i>
+
         </button>
     </form>
 
@@ -66,53 +99,89 @@
 
 
     <div class="row">
+
         <h3 class="text-warning mt-2 mb-3">
+
             Categories
             <i class="text-info fa-solid fa-circle-arrow-down"></i>
+
         </h3>
+
+        <!-- Showing categories -->
+
         <div class="categories col-md-2" *ngIf="categories !== null && categories.length > 0">
+
             <div class="catgory-container">
+
                 <div class="inner-container">
+
                     @for (item of categories; track $index) {
+
                     <ul (click)="loadProductsByCategory(item.id)" class="category-ul">
+
                         <li class="nav-link">
+
                             <h4>
                                 {{item.name}}
                             </h4>
+
                         </li>
                     </ul>
                     }
+
                 </div>
             </div>
         </div>
+
+
+        <!-- Showing products -->
+
         <div class="col product-container">
+
             <div class="row m-auto">
+
                 @for (item of products; track $index) {
+
                 <div class="products container col-4">
 
                     <ul [routerLink]="['/products',item.id]" class="ul">
+
                         <li class="nav-link">
+
                             <h5>
                                 {{item.title}}
                             </h5>
+
                         </li>
+
                         <li class="nav-link">
+
                             <img class="img" loading="lazy" src="{{item.image}}">
+
                         </li>
+
                         <li class="nav-link">
+
                             <p>
                                 Price {{item.price}} $
                             </p>
+
                         </li>
+
                     </ul>
                 </div>
                 }
+
             </div>
 
+            <!-- Showing pagenation buttons-->
+
             <div *ngIf="totalCount > 1" class="pagination center d-flex justify-content-center page-nation-container">
+
                 <div class="page-nation-btn" *ngFor="let item of pageSizeArray">
                     <button class="nation-btn" (click)="onPageChange(item)">{{ item }}</button>
                 </div>
+
             </div>
 
 

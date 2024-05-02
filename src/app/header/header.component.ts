@@ -36,9 +36,11 @@ export default class HeaderComponent implements OnInit {
   searchText: string = '';
   errorMessage: string = '';
   filteredProduct: any[] = [];
+
   showContainer: boolean = true;
   showUserInfo: boolean = true;
   userEmpty: boolean = true;
+
   selectedFile: File | null = null;
   cartItemTotal:number = 0;
 
@@ -66,11 +68,17 @@ export default class HeaderComponent implements OnInit {
 
   }
 
+
+  // Changes the background
+
   themeMode(){
 
     this.themeService.toggleDarkMode();
 
   }
+
+
+  // Sends updated user information to the backend
 
   onSubmit(): void {
 
@@ -85,6 +93,9 @@ export default class HeaderComponent implements OnInit {
       this.userInfoEdit();
 
     }
+
+    // I use it to select a user image
+
     if (this.selectedFile) {
 
       const reader = new FileReader();
@@ -103,6 +114,10 @@ export default class HeaderComponent implements OnInit {
     }
   }
 
+
+
+  // Changes user data name and picture
+
   userInfoEdit() {
 
     this.userService.updateUser(this.loggedUser.userId, this.updateUser).subscribe(
@@ -119,6 +134,8 @@ export default class HeaderComponent implements OnInit {
     )
   }
 
+  // I use it to select a user image
+
   onFileSelected(event: any): void {
 
     const fileInput = event.target;
@@ -127,13 +144,19 @@ export default class HeaderComponent implements OnInit {
       this.selectedFile = fileInput.files[0];
 
     }
-  }
+  } 
+
+
+  // Clicking on the user's avatar brings up the functionality available to the user
 
   userImgClick() {
 
     this.showUserInfo = !this.showUserInfo;
 
   }
+
+
+  // Loads the data of the authorized user
 
   loadLoggedUser() {
 
@@ -163,6 +186,9 @@ export default class HeaderComponent implements OnInit {
     }
   }
 
+
+  // Logs out the authorized user
+
   singOut(): void {
 
     this.userService.logout();
@@ -172,6 +198,10 @@ export default class HeaderComponent implements OnInit {
     // alert("Log Out")
     console.log("Log Out !!!");
   }
+
+
+
+  // Searches for products by title with Live Search
 
   findProductByTitle() {
 
@@ -195,12 +225,18 @@ export default class HeaderComponent implements OnInit {
     )
   }
 
+
+  // Live search field animation
+
   searchInputAnimation(): void {
 
     let inp = document.querySelector('.search-inp') as HTMLInputElement;
     inp.classList.toggle('inpAnimation');
 
   }
+
+
+  // When you click on the content, it deletes the information from the live search
 
   @HostListener('document:click', ['$event'])
   onClick(event: MouseEvent) {

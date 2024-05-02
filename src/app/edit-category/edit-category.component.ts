@@ -24,11 +24,15 @@ export class EditCategoryComponent implements OnInit {
 
 
   newcategory: Category = {
+
     Id: 0,
     Name: ''
+
   }
 
   ngOnInit(): void {
+
+    // By rout, I get the id and on which category I can change the name
 
     this.rout.params.subscribe(response => {
 
@@ -36,6 +40,9 @@ export class EditCategoryComponent implements OnInit {
 
     })
   }
+
+
+  // Updates the category name
 
   updateCategory(): void {
 
@@ -53,6 +60,8 @@ export class EditCategoryComponent implements OnInit {
       }
     );
   }
+
+  // Clears the field
 
   resetForm(): void {
 

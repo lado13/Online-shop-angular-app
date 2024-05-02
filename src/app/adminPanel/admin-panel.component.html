@@ -1,3 +1,6 @@
+
+<!-- loading animation -->
+
 <svg *ngIf="!productsLoaded" class="admin-loading" xmlns="http://www.w3.org/2000/svg"
         xmlns:xlink="http://www.w3.org/1999/xlink" style="margin:auto;background:#fff;display:block;" width="200px"
         height="200px" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid">
@@ -22,25 +25,37 @@
 </svg>
 
 
+<!-- Admin navbar -->
+
 <div class="container admin-nav-container">
+
         <nav class="navbar navbar-expand-lg navbar-container admin-container">
+
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0 ">
+
                         <li class="nav-item">
+
                                 <a class="nav-link upload" [routerLink]="['/categoryUpload']">
                                         <i class="fa-solid fa-file-import"></i> Upload Category
                                 </a>
                         </li>
+
                         <li class="nav-item">
+
                                 <a class="nav-link upload" [routerLink]="['/productUpload']">
                                         <i class="fa-solid fa-file-import"></i> Upload Product
                                 </a>
                         </li>
+
                         <li class="nav-item">
+
                                 <a class="nav-link upload" [routerLink]="['/userOrders']">
                                         <i class="fa-solid fa-dolly"></i> Users orders
                                 </a>
                         </li>
+
                         <li class="nav-item">
+
                                 <a class="nav-link upload" [routerLink]="['/user']">
                                         <i class="fa-solid fa-users"></i> Users
                                 </a>
@@ -51,9 +66,13 @@
 
 
 <div class="admin-title-container">
+
         <i class="logo fa-solid fa-user-secret"></i>
         <h1>Admin Panel</h1>
 </div>
+
+
+<!-- Admin live matrix svg -->
 
 <svg class="matrix" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
         style="margin:auto;background:#000000;display:block;z-index:1;position:relative" width="1084" height="322"
@@ -308,25 +327,36 @@
 
 
 
+<!-- Content -->
 
 <div class="container fluid-container">
+
         <div class="row">
+                    <!-- Categories loaded-->
                 <div class="categories col-md-3" *ngIf="categories !== null && categories.length > 0">
+               
                         <div class="catgory-container">
+
                                 <div class="inner-container">
+
                                         @for (item of categories; track $index) {
+
                                         <ul class="category-ul">
+
                                                 <li class="nav-link">
+
                                                         <h4 (click)="showProductByCategoryClick(item.id)"
                                                                 class="category-model-value">
                                                                 {{item.name}}
                                                         </h4>
                                                 </li>
+
                                                 <div>
                                                         <button class="edit-btn" (click)="editCategory(item.id)">
                                                                 <i class="fa-regular fa-pen-to-square"></i>
                                                         </button>
                                                 </div>
+
                                                 <div>
                                                         <button class="remove-btn" (click)="deleteCategory(item.id)">
                                                                 <i class="fa-regular fa-trash-can"></i>
@@ -337,38 +367,56 @@
                                 </div>
                         </div>
                 </div>
+
+                <!-- Product loaded -->
+
                 <div class="col product-container">
+
                         <div class="row m-auto">
+
                                 @for (item of products; track $index) {
+
                                 <div class="products container col-4">
 
                                         <ul class="ul">
+
                                                 <li class="nav-link">
+
                                                         <h5>
                                                                 {{item.title}}
                                                         </h5>
                                                 </li>
+
                                                 <li class="nav-link">
+
                                                         <img class="img" loading="lazy" src="{{item.image}}">
                                                 </li>
+
                                                 <li class="nav-link">
+
                                                         <p>
                                                                 {{item.model}} 
                                                         </p>
                                                 </li>
+
                                                 <li class="nav-link">
+
                                                         <p>
                                                                 {{item.price}} $
                                                         </p>
                                                 </li>
+
                                                 <li class="nav-link">
+
                                                         <button class="edit-btn" (click)="editProduct(item.id)">
                                                                 <i class="fa-regular fa-pen-to-square"></i>
                                                         </button>
+
                                                         <button class="remove-btn" (click)="deleteProduct(item.id)">
                                                                 <i class="fa-regular fa-trash-can"></i>
                                                         </button>
                                                 </li>
+                                                
                                         </ul>
                                 </div>
                                 }

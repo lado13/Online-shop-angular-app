@@ -4,7 +4,6 @@ import { CommonModule } from '@angular/common';
 import { RouterLink } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { OrderService } from '../Service/OrderService/order.service';
-import { error } from 'console';
 
 
 
@@ -33,6 +32,11 @@ export class UserOrderComponent implements OnInit {
 
   }
 
+
+
+
+  // loading all users orders
+
   getOrders(): void {
 
     this.service.getOrder().subscribe(
@@ -51,6 +55,10 @@ export class UserOrderComponent implements OnInit {
       }
     )
   }
+
+
+
+  // removing user order 
 
   deleteOrderById(orderID: number) {
 

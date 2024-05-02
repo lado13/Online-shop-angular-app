@@ -7,7 +7,8 @@ import { Observable } from 'rxjs';
 })
 export class CartService {
 
-  constructor(private http: HttpClient) {
+
+  constructor( ) {
 
     this.LoadCart();
 
@@ -19,11 +20,17 @@ export class CartService {
   message: string = '';
 
 
+
+  // Returns the number of products in the cart
+
   cartQuantity() {
 
     return this.productsCart.reduce((total, product) => total + product.quantity, 0);
 
   }
+
+
+  // The service adds the product to the cart
 
   addToCart(product: any): void {
 
@@ -45,6 +52,8 @@ export class CartService {
   }
 
 
+  // Stores products added to cart in local storage
+
   private saveCart(): void {
 
     localStorage.setItem(this.storageKey, JSON.stringify(this.productsCart));
@@ -58,6 +67,9 @@ export class CartService {
   //   }
   // }
 
+
+
+  // Loads products from local storage
 
   private LoadCart(): void {
 
@@ -77,11 +89,19 @@ export class CartService {
     }
   }
 
+
+
+  // Returns all products in the cart
+
   getCartItem(): any[] {
 
     return this.productsCart;
 
   }
+
+
+
+  // Removes a specific product from the cart
 
   removeCart(product: any): void {
 
@@ -98,11 +118,19 @@ export class CartService {
     }
   }
 
+
+
+  // Clears all data in local storage
+
   clearCart(): void {
 
     localStorage.removeItem('shoppingCart');
 
   }
+
+
+
+  // Increases the quantity of a particular product by one
 
   increaseQuantity(product: any): void {
 
@@ -115,6 +143,11 @@ export class CartService {
     }
 
   }
+
+
+
+
+  // Reduces the quantity of a particular product by one
 
   decreaseQuantity(product: any): void {
 
@@ -130,6 +163,11 @@ export class CartService {
       this.saveCart();
     }
   }
+
+
+
+
+  // Returns the price of the total number of products in the cart
 
   getCartTotal(): number {
 

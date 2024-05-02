@@ -17,9 +17,7 @@ export class PasswordResetRequestComponent {
   constructor(
 
     private userService: UserService,
-    private route: ActivatedRoute,
-    private router: Router
-    
+    private route: ActivatedRoute    
   ) { }
 
   email: string = '';
@@ -34,6 +32,9 @@ export class PasswordResetRequestComponent {
 
   ngOnInit() {
 
+
+    // I get information from the user's password recovery token
+
     this.route.queryParams.subscribe(params => {
 
       const recoveryToken = params['token'];
@@ -45,6 +46,9 @@ export class PasswordResetRequestComponent {
 
     });
   }
+
+
+  // Checks if the repeated password matches
 
   onSubmitReset(): void {
 
@@ -58,6 +62,10 @@ export class PasswordResetRequestComponent {
     this.resetPassword();
 
   }
+
+
+
+  // Sends back the user's updated password
 
   resetPassword() {
 
@@ -78,6 +86,8 @@ export class PasswordResetRequestComponent {
       });
   }
 
+  // Clears the field
+
   resetForm(): void {
 
     this.newPassword = '';
@@ -85,11 +95,18 @@ export class PasswordResetRequestComponent {
 
   }
 
+
+  
+  // Displays the password in text format
+
   togglePasswordVisibility() {
 
     this.showPassword = !this.showPassword;
 
   }
+
+
+  // Displays the password in text format
 
   togglePasswordRepeatVisibility() {
 

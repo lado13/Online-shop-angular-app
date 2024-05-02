@@ -1,38 +1,56 @@
 <nav class="navbar navbar-expand-lg navbar-container">
+
     <div class="container">
+
         <a class="navbar-brand logo" [routerLink]="['']">
             <i class="fa-brands fa-slack"></i>
         </a>
+
         <button class="navbar-toggler bg-white" type="button" data-bs-toggle="collapse"
             data-bs-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false"
             aria-label="Toggle navigation">
+
             <span class="navbar-toggler-icon"></span>
+
         </button>
 
         <form class="d-flex position-relative" role="search">
+
+            <!-- Live search field -->
+
             <input (click)="searchInputAnimation()" [(ngModel)]="searchText" (input)="findProductByTitle()"
                 class="form-control me-2 search-inp" name="search" placeholder="Search" aria-label="Search">
 
 
+            <!-- A container for live search searched products -->
+
             <div *ngIf="showContainer" class="container search-container">
+
                 @for (item of filteredProduct; track $index) {
+
                 <ul class="navbar-nav item-container">
+
                     <li [routerLink]="['/products',item.id]" class="nav-item">
+
                         <img class="img" src="{{item.image}}">
+
                         <h4 class="item-value">
                             {{item.title}}
                         </h4>
+
                         <p class="item-value">
                             {{item.model}}
                         </p>
+
                         <p class="item-value">
                             {{item.price}} $
                         </p>
+
                     </li>
                 </ul>
                 }
-            </div>
 
+            </div>
         </form>
 
         <div class="collapse navbar-collapse " id="navbarTogglerDemo02">
@@ -40,64 +58,78 @@
             <div class="m-auto">
 
             </div>
+
             <ul class="navbar-nav">
+
+                <!-- If the user is authorized then it displays user information
+                     otherwise authorization and registration -->
+
                 <li *ngIf="!userEmpty" class="nav-item">
                     <a class="nav-link active" aria-current="page" [routerLink]="['/singIn']">Sing In</a>
                 </li>
+
                 <li *ngIf="!userEmpty" class="nav-item">
                     <a class="nav-link" aria-current="page" [routerLink]="['/singUp']">Sing Up</a>
                 </li>
 
-              
-              
 
                 <li class="nav-item" *ngIf="userEmpty">
                     <p class="user-welcome">{{ loggedUser.firstName }}</p>
                 </li>
 
                 <li class="nav-item" *ngIf="userEmpty">
+
+                    <!-- Shows user functionality when clicked on user avatar -->
+
                     <img class="user-img" (click)="userImgClick()" src="{{loggedUser.image}}">
-
-                    
-
 
 
                     <div class="user-info-Container" *ngIf="!showUserInfo">
                         <div class="navbar-nav">
+
                 <li class="user-nav-item">
+
                     <a class="user-link edit-info" data-bs-toggle="modal" data-bs-target="#userInfoEditModal">
                         Edit Info
                         <i class="ms-1 fa-solid fa-user-pen"></i>
                     </a>
+
                 </li>
+
                 <li class="user-nav-item">
+
                     <a class="user-link log-out" (click)="singOut()">
                         Log Out
                         <i class="ms-2 fa-solid fa-arrow-right-from-bracket"></i>
                     </a>
+
                 </li>
 
-                
+
         </div>
     </div>
     </li>
 
 
     <li class="nav-item">
+
         <a class="nav-link text-warning" (click)="themeMode()">
             <i class="fa-regular fa-moon"></i>
         </a>
+
     </li>
 
     <li class="nav-item position-relative">
+
         <div class="cuantity-container">
             <p class="product-cuantity">{{cartItemTotal}}</p>
         </div>
+
         <a class="nav-link" [routerLink]="['/shopingCart']">
             <i class="fa-solid fa-cart-shopping"></i>
         </a>
+
     </li>
-   
     </ul>
     </div>
     </div>
@@ -107,39 +139,55 @@
 
 
 
+<!-- The modal window shows the current user data and it is possible to update the user data -->
 
 <div class="modal fade user-info-update-container" id="userInfoEditModal" tabindex="-1"
     aria-labelledby="userInfoEditModalLabel" aria-hidden="true">
+
     <div class="modal-dialog">
+
         <div class="modal-content">
+
             <div class="modal-header">
+
                 <h1 class="modal-title fs-5" id="exampleModalLabel">
                     User Info
                     <i class="fa-solid fa-circle-info"></i>
                 </h1>
+
                 <button type="button" class="btn-close text-bg-light" data-bs-dismiss="modal"
                     aria-label="Close"></button>
             </div>
+
             <div class="modal-body">
                 <label class="modal-title me-md-4">Avatar</label>
                 <img class="update-user-info-img" src="{{loggedUser.image}}">
             </div>
+
             <div class="modal-body d-flex">
+
                 <label class="modal-title me-md-4">New Nikname</label>
                 <input [(ngModel)]="loggedUser.firstName" class="modal-inp" type="text" id="name" name="name"
                     placeholder="Name">
             </div>
+
             <div class="modal-body d-flex">
+
                 <label class="modal-title me-md-4">
                     New Avatar
                     <i class="fa-solid fa-user-tie"></i>
                 </label>
+
                 <input class="modal-inp" type="file" id="image" name="image" (change)="onFileSelected($event)">
+
             </div>
+
             <div class="modal-footer">
+
                 <button type="button" id="close-btnn" class="btn btn-secondary close"
                     data-bs-dismiss="modal">Close</button>
                 <button type="button" class="btn btn-primary send" (click)="onSubmit()">Save Changes</button>
+
             </div>
         </div>
     </div>

@@ -22,7 +22,9 @@ export class CategoryUploadComponent {
   ) { }
 
   categoryData: Category = {
+
     Name: '',
+
   }
 
   onSubmit() {
@@ -30,6 +32,8 @@ export class CategoryUploadComponent {
     this.uploadCategory();
 
   }
+
+  // Adds a new category
 
   uploadCategory() {
 
@@ -46,6 +50,9 @@ export class CategoryUploadComponent {
       }
     )
   }
+
+
+  // Clears the field
 
   resetForm(): void {
 

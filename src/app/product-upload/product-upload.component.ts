@@ -17,7 +17,7 @@ export class ProductUploadComponent implements OnInit {
   constructor(
 
     private service: ProductService
-    
+
   ) { }
 
   ngOnInit(): void {
@@ -25,12 +25,15 @@ export class ProductUploadComponent implements OnInit {
     this.getCategories();
 
   };
-  
+
 
   productData: Product = { title: '', model: '', price: 0, image: '', categoryId: 0 }
   selectedFile: File | null = null;
   categories: any[] = [];
 
+
+
+  // Loading categories
 
   getCategories(): void {
 
@@ -39,7 +42,7 @@ export class ProductUploadComponent implements OnInit {
       (response: any) => {
 
         this.categories = response
-        console.log(response);    
+        console.log(response);
 
       },
       (error) => {
@@ -48,9 +51,15 @@ export class ProductUploadComponent implements OnInit {
     )
   }
 
+
+
+  // Sends Beck a new product
+
   onSubmit(): void {
 
     if (this.selectedFile) {
+
+      // I use it to upload a picture
 
       const reader = new FileReader();
       reader.onloadend = () => {
@@ -66,6 +75,11 @@ export class ProductUploadComponent implements OnInit {
       console.error('No file selected');
     }
   }
+
+
+
+
+  // Adds a new product
 
   private upload(): void {
 
@@ -83,6 +97,10 @@ export class ProductUploadComponent implements OnInit {
     )
   }
 
+
+
+  // I use it to upload a picture
+
   onFileSelected(event: any): void {
 
     const fileInput = event.target;
@@ -93,10 +111,14 @@ export class ProductUploadComponent implements OnInit {
     }
   }
 
+
+
+  // Clears the field
+
   resetForm(): void {
 
     this.productData = { title: '', model: '', price: 0, image: '', categoryId: 0 }
-    
+
   }
 
 

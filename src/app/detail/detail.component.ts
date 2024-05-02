@@ -10,7 +10,7 @@ import { CommonModule } from '@angular/common';
 @Component({
   selector: 'app-detail',
   standalone: true,
-  imports: [RouterLink,CommonModule],
+  imports: [RouterLink, CommonModule],
   templateUrl: './detail.component.html',
   styleUrl: './detail.component.scss'
 })
@@ -22,16 +22,20 @@ export class DetailComponent {
     private router: ActivatedRoute,
     private cartService: CartService,
     private user: UserService,
-    
+
   ) { }
 
   id: string = '';
   product: any;
   message: string = 'Add to cart';
-  productsLoaded:boolean = false;
+
+  // Loading animation
+  productsLoaded: boolean = false;
 
   ngOnInit(): void {
 
+
+    // I get the product id by router to know which product to display detailed information
     this.router.params.subscribe(response => {
 
       this.id = response['id'];
@@ -39,6 +43,9 @@ export class DetailComponent {
 
     })
   }
+
+
+  // Loads detailed product information
 
   showProductDetail() {
 
@@ -57,11 +64,14 @@ export class DetailComponent {
     )
   }
 
+
+  // Adds product to cart
+
   addProductToCart(product: any): void {
 
     this.cartService.addToCart(product);
     this.message = this.cartService.message;
-    
+
   }
 
 

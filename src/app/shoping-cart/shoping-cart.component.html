@@ -4087,49 +4087,71 @@
     <div class="row">
 
         <div>
+
+            <!-- Shows the total order amount -->
+            
             <h5 class="float-end text-white text-decoration-underline">
                 Total Price:  
                 <span class="text-warning">{{totalPrice}}</span> 
                 $
             </h5>
+
         </div>
+
+        <!-- Sends an order -->
 
         <button class="float-end mt-5 order-btn " (click)="addOrder()">{{message}}</button>
 
         <div class="col-md-4  w-100 ">
+
+            <!-- Shows the products added to the cart -->
+
             @for (item of savedOrders; track $index) {
+
             <ul class="nav-item">
 
                 <li class="nav-link d-flex">
+
                     <img class="image" src="{{item.image}}">
+
                     <div class="d-block w-25 ms-5 order-model-title">
                         <h3 class="model-title-impo">Title: {{item.title}}</h3>
                         <h4 class="model-title">Model: {{item.model}}</h4>
                         <h4 class="model-title">Price: {{item.price}} $</h4>
                     </div>
+
                     <div class="m-sm-5 d-flex">
+
                         <div (click)="increaseQuantity(item)">
                             <h3 class="pluse-minuse">
                                 <i class="fa-solid fa-plus"></i>
                             </h3>
                         </div>
+
                         <div>
                             <h3 class="counter">
                                 {{ item.quantity }}
                             </h3>
                         </div>
+
                         <div (click)="decreaseQuantity(item)">
                             <h3 class="pluse-minuse">
                                 <i class="fa-solid fa-minus"></i>
                             </h3>
                         </div>
+
                     </div>
+
+                    <!-- Removes the product from the cart -->
+
                     <button class="remove-btn" (click)="removeProduct(item)">
                         <i class="fa-solid fa-trash-can"></i>
                     </button>
+
                 </li>
             </ul>
             }
+
         </div>
     </div>
 </div>

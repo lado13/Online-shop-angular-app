@@ -1,19 +1,35 @@
 <div class="m-auto w-25 container">
+
     <h2 class="text-center">Login</h2>
+
     <div class="login-container center">
+
         <form class="login-form" #loginForm="ngForm" (ngSubmit)="onSubmitLogin()">
+
             <div class="text-center field-container">
+
                 <label class="form-label" for="email">Email</label>
+
                 <input class="form-control" type="email" id="email" name="email" [(ngModel)]="login.email" required
                     #email="ngModel">
+
+                    <!-- Throws validation errors when touched -->
+
                 <div *ngIf="email.invalid && (email.dirty || email.touched)">
                     <span class="error-message" *ngIf="email.errors">Email is required</span>
                     <span class="error-message" *ngIf="email.errors">Please enter a valid email address</span>
                 </div>
+
             </div>
+
             <div class="text-center field-container">
+
                 <label class="form-label" for="password">Password</label>
+               
                 <div class="pass-input">
+                   
+                    <!-- Makes the password readable -->
+
                     <input class="form-control " [type]="showPassword ? 'text' : 'password'" id="password"
                         name="password" [(ngModel)]="login.password" required #password="ngModel">
                     <i (click)="togglePasswordVisibility()" class=" eye fa-regular fa-eye"></i>
@@ -21,39 +37,64 @@
                 </div>
 
                 <div *ngIf="password.invalid && (password.dirty || password.touched)">
+               
                     <span class="error-message" *ngIf="password.errors">Password is required</span>
+              
                 </div>
+
             </div>
 
             <div class="field-container  d-flex justify-content-end mt-3 text-white">
+           
                 <a class="recovery" data-bs-toggle="modal" data-bs-target="#recoveryPasswordModal">Recovery Password</a>
+          
             </div>
+
              <p class="text-danger mt-3">{{message}}</p>
-            <div class="text-center field-container">
+           
+             <div class="text-center field-container">
+             
                 <button class="w-100 btn sing-btn" type="submit" [disabled]="loginForm.invalid">Login</button>
+          
             </div>
+
         </form>
     </div>
 </div>
 
 
 
+
+
+<!-- A modal window to verify a valid email for password recovery -->
+
+
 <div class="modal fade" id="recoveryPasswordModal" tabindex="-1" aria-labelledby="recoveryPasswordModalLabel" aria-hidden="true">
+   
     <div class="modal-dialog">
+
         <div class="modal-content">
+
             <div class="modal-header">
+              
                 <h1 class="modal-title fs-5" id="exampleModalLabel">Recovery password</h1>
                 <button type="button" class="btn-close text-bg-light" data-bs-dismiss="modal" aria-label="Close"></button>
+           
             </div>
+          
             <div class="modal-body">
                 <input class="modal-inp" [(ngModel)]="resetPasswordEmail" (ngModelChange)="checkValidEmail($event)" type="email"
                     placeholder="Email">
             </div>
+           
             <small *ngIf="!resetPasswordEmail" class="text-danger">Email is required</small>
             <small *ngIf="!isValidEmail && resetPasswordEmail" class="text-danger">Email is invalid</small>
+           
             <div class="modal-footer">
+               
                 <button type="button" id="close-btn" class="btn btn-secondary close" data-bs-dismiss="modal">Close</button>
                 <button type="button" (click)="confirmToSend()" class="btn btn-primary send">Send</button>
+          
             </div>
         </div>
     </div>

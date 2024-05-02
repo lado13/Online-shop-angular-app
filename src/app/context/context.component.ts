@@ -4,7 +4,6 @@ import { CommonModule } from '@angular/common';
 import { RouterLink } from '@angular/router';
 import { Product } from '../Interface/IProduct/product';
 import { FormsModule } from '@angular/forms';
-import { max } from 'rxjs';
 
 
 @Component({
@@ -24,7 +23,10 @@ export class ContextComponent {
 
   categories: any[] = [];
   caruselProduct: any[] = [];
+
+  // Loadning animation
   productsLoaded: boolean = false;
+
   products: Product[] = [];
   currentPage: number = 1;
   pageSize: number = 5;
@@ -43,8 +45,11 @@ export class ContextComponent {
     this.loadCarusel();
     this.generatePageSizeArray();
     this.filterByPrice();
-    
+
   }
+
+
+  // Filters products by price
 
   filterByPrice() {
 
@@ -54,7 +59,7 @@ export class ContextComponent {
 
         this.products = res
         console.log(res);
-        this.minPrice = 0;  
+        this.minPrice = 0;
         this.maxPrice = 0;
 
       },
@@ -63,15 +68,19 @@ export class ContextComponent {
       }
     );
   }
-  
 
 
+
+  // Generates pages based on the size of the products
 
   generatePageSizeArray(): void {
 
     this.pageSizeArray = Array.from({ length: this.pageSize }, (_, i) => i + 1);
 
   }
+
+
+  // Filters products by category on click
 
   loadProductsByCategory(categoryID: number): void {
 
@@ -89,6 +98,7 @@ export class ContextComponent {
     )
   }
 
+
   onPageChange(page: number): void {
 
     this.currentPage = page;
@@ -96,6 +106,8 @@ export class ContextComponent {
     this.loadProducts();
 
   }
+
+  // Loads all categories
 
   showCategories(): void {
 
@@ -112,6 +124,8 @@ export class ContextComponent {
     )
   }
 
+  // Loads all products
+
   loadProducts(): void {
 
     this.service.getProducts(this.currentPage, this.pageSize).subscribe(
@@ -127,6 +141,11 @@ export class ContextComponent {
         console.log(error);
       }
   }
+
+
+  
+
+  // Loads the carousel by moving products
 
   loadCarusel(): void {
 
