@@ -1,27 +1,67 @@
-# AngularApp
+# Angular Online Shop
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.1.1.
+Welcome to the Angular Online Shop! This project is a web application built with Angular, serving as an online shopping platform where users can browse products, add them to their cart, and complete purchases.
 
-## Development server
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
 
-## Code scaffolding
+## Installation
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+1. **Clone the Repository**:
+   - Open the command prompt or terminal.
+   - Run the following command to clone the repository:
+     ```
+     git clone https://github.com/your-username/your-angular-online-shop.git
+     ```
 
-## Build
+2. **Set Up Angular App**:
+   - Navigate to the cloned repository directory:
+     ```
+     cd your-angular-online-shop
+     ```
+   - Install Angular CLI globally if not already installed:
+     ```
+     npm install -g @angular/cli
+     ```
+   - Install project dependencies:
+     ```
+     npm install
+     ```
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+3. **Open Visual Studio Code**:
+   - Launch Visual Studio Code.
+   - Open the cloned repository in Visual Studio Code:
+     ```
+     code .
+     ```
 
-## Running unit tests
+4. **Replace Angular App Sources**:
+   - In the newly opened Angular app in Visual Studio Code, remove the existing Angular project sources (if any).
+   - Copy and paste the sources from the cloned repository into the Angular app directory.
+  
+5. **
+When enabling the Online Web API, it's important to ensure that its localhost endpoint matches the endpoints of services in the Angular application. If they do not match, you'll need to specify the localhost address where the Web API will be running.
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+ **Update Angular Environment Configuration**:
+- Open the `environment.ts` file in the Angular project (`src/environments/environment.ts`).
+- Update the `apiUrl` property to match the localhost address where the Web API will be running. For example:
+  ```typescript
+  export const environment = {
+    production: false,
+    apiUrl: 'http://localhost:5000/api' // Update this URL
+  };
+  ```
 
-## Running end-to-end tests
+ **Update Web API Host Address**:
+- When running the Online Web API locally, ensure that it is hosted on the correct localhost address.
+- If the default localhost address (e.g., `http://localhost:5000`) is not suitable, specify the desired localhost address in the Web API project settings or launch configuration.
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+By ensuring that the localhost addresses of the Web API and the Angular application match, you can seamlessly integrate the frontend with the backend services.
+   - 
 
-## Further help
+6. **Run the Application**:
+   - In the terminal within Visual Studio Code, start the Angular development server:
+     ```
+     ng serve -o
+     ```
+   - This command compiles the application and opens it in the default web browser.
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
