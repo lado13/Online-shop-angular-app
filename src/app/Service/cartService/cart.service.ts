@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Observable, Subject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -8,7 +8,7 @@ import { Observable } from 'rxjs';
 export class CartService {
 
 
-  constructor( ) {
+  constructor() {
 
     this.LoadCart();
 
@@ -19,6 +19,28 @@ export class CartService {
   productsCart: any[] = [];
   message: string = '';
 
+  // Subject to emit cart quantity changes
+  cartQuantitySubject: Subject<number> = new Subject<number>();
+
+
+
+
+  private updateCartQuantity(): void {
+
+    const quantity = this.cartQuantity();
+
+    // Emit cart quantity through subject
+    this.cartQuantitySubject.next(quantity); 
+
+  }
+
+
+
+  getCartQuantitySubject(): Subject<number> {
+
+    return this.cartQuantitySubject;
+
+  }
 
 
   // Returns the number of products in the cart
@@ -58,14 +80,11 @@ export class CartService {
 
     localStorage.setItem(this.storageKey, JSON.stringify(this.productsCart));
 
+    // Update cart quantity after saving to storage
+    this.updateCartQuantity();
+
   }
 
-  // private LoadCart(): void {
-  //   const storedCart = localStorage.getItem(this.storageKey);
-  //   if (storedCart) {
-  //     this.productsCart = JSON.parse(storedCart);
-  //   }
-  // }
 
 
 

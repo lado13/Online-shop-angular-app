@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Router, RouterLink } from '@angular/router';
 import { UserService } from '../Service/userService/user.service';
 import { FormsModule } from '@angular/forms';
@@ -9,6 +9,7 @@ import { ElementRef } from '@angular/core';
 import { ThemeService } from '../Service/themeService/theme.service';
 import { JwtDecodeService } from '../jwtDecode/jwt-decode.service';
 import { CartService } from '../Service/cartService/cart.service';
+import { Subscription } from 'rxjs';
 
 
 @Component({
@@ -18,7 +19,7 @@ import { CartService } from '../Service/cartService/cart.service';
   templateUrl: './header.component.html',
   styleUrl: './header.component.scss'
 })
-export default class HeaderComponent implements OnInit {
+export default class HeaderComponent implements OnInit, OnDestroy {
 
   constructor(
 
@@ -42,7 +43,6 @@ export default class HeaderComponent implements OnInit {
   userEmpty: boolean = true;
 
   selectedFile: File | null = null;
-  cartItemTotal:number = 0;
 
   loggedUser: any = {
 
@@ -59,19 +59,43 @@ export default class HeaderComponent implements OnInit {
 
   }
 
+
+
+  cartQuantity: number = 0;
+  cartSubscription: Subscription = new Subscription();
+
+
   ngOnInit(): void {
 
     this.loadLoggedUser();
     this.themeService.ngOnInit();
-    this.cartItemTotal = this.cartService.cartQuantity();
-    
+
+
+    this.cartQuantity = this.cartService.cartQuantity();
+
+    this.cartSubscription = this.cartService.getCartQuantitySubject().subscribe(
+
+      (quantity) => {
+
+        this.cartQuantity = quantity;
+
+      });
+
 
   }
 
 
+  ngOnDestroy(): void {
+
+    this.cartSubscription.unsubscribe();
+
+  }
+
+
+
   // Changes the background
 
-  themeMode(){
+  themeMode() {
 
     this.themeService.toggleDarkMode();
 
@@ -108,7 +132,7 @@ export default class HeaderComponent implements OnInit {
       };
 
       reader.readAsDataURL(this.selectedFile);
-    
+
     } else {
       console.error('No file selected');
     }
@@ -144,7 +168,7 @@ export default class HeaderComponent implements OnInit {
       this.selectedFile = fileInput.files[0];
 
     }
-  } 
+  }
 
 
   // Clicking on the user's avatar brings up the functionality available to the user
@@ -182,7 +206,7 @@ export default class HeaderComponent implements OnInit {
 
       console.log(item);
       console.log(this.loggedUser);
-      
+
     }
   }
 
@@ -248,7 +272,7 @@ export default class HeaderComponent implements OnInit {
     } else {
 
       this.showContainer = true;
-      
+
     }
   }
 
